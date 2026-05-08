@@ -317,8 +317,7 @@ html { scroll-behavior: smooth; }
 - Tel-Nummer **0171/9900177** mehrfach (Hero-CTA + Footer + sticky Mobile-CTA)
 - Impressum mit ladungsfähiger Adresse (User liefert in Phase 5)
 - Datenschutz-Seite (Standard-Text für statische Page ohne Tracker)
-- Instagram-Link **@blech_n_takt** sichtbar
-- Facebook-Link **bit.ly/FB_blechtakt** sichtbar
+- Instagram-Link **@blech_n_takt** sichtbar (Facebook bewusst weggelassen — wird nicht aktiv gepflegt)
 - Live-Videos / Reels (eingebettet von Insta oder YouTube)
 - Bandfotos / Auftrittsfotos (aus `05_Bilder/2024`)
 - Aktuelle Termine 2026 (aus `06_Verwaltung/Termine/Termine 2026.xlsx`)
