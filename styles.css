@@ -10,9 +10,9 @@
   --color-bg-card: #1c1c1f;
   --color-bg-darkest: #0a0a0c;
 
-  --color-accent: #B22325;             /* Brand-Rot (Buttons, Backgrounds, Borders) */
+  --color-accent: #B22325;
   --color-accent-hover: #9a1d1f;
-  --color-accent-text: #FF5C5E;        /* Helleres Rot für Text auf dunklem BG (WCAG-AA) */
+  --color-accent-text: #B22325;        /* Brand-Konsistenz priorisiert über WCAG-AA */
 
   --color-text: #ffffff;
   --color-text-muted: rgba(255, 255, 255, 0.85);
