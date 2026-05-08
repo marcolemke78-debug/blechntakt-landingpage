@@ -33,7 +33,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"></noscript>
+  <link rel="preload" as="image" href="assets/photos/hero-promo.webp" media="(min-width: 720px)">
+  <link rel="preload" as="image" href="assets/photos/hero-promo-mobile.webp" media="(max-width: 719px)">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -81,13 +84,18 @@
       </p>
     </div>
     <figure class="hero__media">
-      <img src="assets/photos/hero-promo.jpg"
-           srcset="assets/photos/hero-promo-mobile.jpg 800w,
-                   assets/photos/hero-promo.jpg 1400w"
-           sizes="(max-width: 720px) 100vw, 50vw"
-           alt="Die sieben Musiker der Combo blech'n'takt mit Trompeten, Posaune, Tuba, Euphonium und Schlagzeug-Sticks vor grüner Hecke. Schwarzer Look mit Hosenträgern und roten Schuhen."
-           width="1400" height="1050"
-           loading="eager" fetchpriority="high">
+      <picture>
+        <source type="image/webp"
+                srcset="assets/photos/hero-promo-mobile.webp 800w, assets/photos/hero-promo.webp 1400w"
+                sizes="(max-width: 720px) 100vw, 50vw">
+        <source type="image/jpeg"
+                srcset="assets/photos/hero-promo-mobile.jpg 800w, assets/photos/hero-promo.jpg 1400w"
+                sizes="(max-width: 720px) 100vw, 50vw">
+        <img src="assets/photos/hero-promo.jpg"
+             alt="Die sieben Musiker der Combo blech'n'takt mit Trompeten, Posaune, Tuba, Euphonium und Schlagzeug-Sticks vor grüner Hecke. Schwarzer Look mit Hosenträgern und roten Schuhen."
+             width="1400" height="1050"
+             loading="eager" fetchpriority="high">
+      </picture>
     </figure>
   </section>
 
@@ -538,19 +546,19 @@
     </div>
 
     <nav class="site-footer__col" aria-label="Social Media">
-      <h4>Folgen</h4>
+      <h3>Folgen</h3>
       <a href="https://instagram.com/blech_n_takt" rel="noopener" target="_blank">Instagram</a>
       <a href="https://bit.ly/FB_blechtakt" rel="noopener" target="_blank">Facebook</a>
     </nav>
 
     <nav class="site-footer__col" aria-label="Rechtliches">
-      <h4>Rechtliches</h4>
+      <h3>Rechtliches</h3>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
 
     <nav class="site-footer__col" aria-label="Booking">
-      <h4>Booking</h4>
+      <h3>Booking</h3>
       <a href="tel:+4901719900177">📞 0171 / 9900177</a>
     </nav>
   </div>

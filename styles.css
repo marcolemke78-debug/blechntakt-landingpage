@@ -15,8 +15,8 @@
 
   --color-text: #ffffff;
   --color-text-muted: rgba(255, 255, 255, 0.85);
-  --color-text-soft: rgba(255, 255, 255, 0.6);
-  --color-text-faint: rgba(255, 255, 255, 0.4);
+  --color-text-soft: rgba(255, 255, 255, 0.7);
+  --color-text-faint: rgba(255, 255, 255, 0.6);
 
   --color-success: #22C55E;
 
@@ -862,7 +862,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   margin-top: var(--space-xs);
 }
 
-.site-footer__col h4 {
+.site-footer__col h3 {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
