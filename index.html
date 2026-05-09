@@ -105,16 +105,16 @@
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about" aria-labelledby="about-title">
     <div class="about__container">
-      <div class="about__text">
-        <h2 id="about-title" class="section-title">
-          Tradition trifft Moderne. <br>
-          <span class="accent">Live auf eurer Bühne.</span>
-        </h2>
-        <p class="about__lead">
-          Wir sind blech'<span class="red-n">n</span>'takt, eine Blech-Combo mit Schlagzeug vom Kaiserstuhl.
-          Drei Trompeten, Posaune, Euphonium, Tuba und Drums. Was nach Tradition klingt,
-          hat ordentlich Druck unter dem Kessel. Sound, der groovt statt staubt.
-        </p>
+      <h2 id="about-title" class="section-title">
+        Tradition trifft Moderne. <br>
+        <span class="accent">Live auf eurer Bühne.</span>
+      </h2>
+      <p class="about__lead">
+        Wir sind blech'<span class="red-n">n</span>'takt, eine Blech-Combo mit Schlagzeug vom Kaiserstuhl.
+        Drei Trompeten, Posaune, Euphonium, Tuba und Drums. Was nach Tradition klingt,
+        hat ordentlich Druck unter dem Kessel. Sound, der groovt statt staubt.
+      </p>
+      <div class="about__body">
         <ul class="about__points" role="list">
           <li>
             <span class="about__icon" aria-hidden="true">🎺</span>
@@ -139,16 +139,16 @@
             </div>
           </li>
         </ul>
-        <p class="about__events">
-          <strong>Wo wir spielen:</strong>
-          Vereinsfeste · Dorffeste · Stadtfeste · Weinfeste · Hallenabende · Open-Air-Sets · Hochzeiten · kulinarische Feste
-        </p>
+        <figure class="about__media">
+          <img src="assets/photos/about-comic.jpg"
+               alt="Comic-Illustration der Combo blech'n'takt im Simpsons-Stil mit Trompeten, Tuba, Posaune, Hosenträgern und roten Schuhen."
+               width="800" height="800" loading="lazy">
+        </figure>
       </div>
-      <figure class="about__media">
-        <img src="assets/photos/about-comic.jpg"
-             alt="Comic-Illustration der Combo blech'n'takt im Simpsons-Stil mit Trompeten, Tuba, Posaune, Hosenträgern und roten Schuhen."
-             width="800" height="800" loading="lazy">
-      </figure>
+      <p class="about__events">
+        <strong>Wo wir spielen:</strong>
+        Vereinsfeste · Dorffeste · Stadtfeste · Weinfeste · Hallenabende · Open-Air-Sets · Hochzeiten · kulinarische Feste
+      </p>
     </div>
   </section>
 
@@ -224,12 +224,19 @@
 
       <a class="videos__cta" href="https://www.instagram.com/blech_n_takt/reels/"
          rel="noopener" target="_blank">
-        <span class="videos__cta-icon" aria-hidden="true">▶</span>
+        <span class="videos__cta-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </span>
         <span class="videos__cta-text">
           <strong>Mehr Reels auf Instagram</strong>
           <span class="videos__cta-handle">@blech_<span class="red-n">n</span>_takt · immer aktuell</span>
         </span>
-        <span class="videos__cta-arrow" aria-hidden="true">→</span>
+        <img class="videos__cta-qr" src="assets/icons/insta-qr.png"
+             alt="Instagram QR-Code @blech_n_takt" width="171" height="171" loading="lazy">
       </a>
     </div>
   </section>
@@ -310,143 +317,151 @@
       <h2 id="gigs-title" class="section-title">Hier spielen wir 2026.</h2>
       <p class="gigs__subtitle">Komm vorbei oder bring uns zu deiner Bühne.</p>
 
-      <ul class="gigs__list" role="list">
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=Glotterfest+Nimburg"
-             rel="noopener" target="_blank"
-             aria-label="Glotterfest Nimburg am 19.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">19.06.2026</span>
-              <span class="gig-card__time">19:00</span>
-            </div>
-            <h3 class="gig-card__title">Glotterfest</h3>
-            <p class="gig-card__venue">📍 Nimburg</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
+      <div class="gigs__months">
 
-        <li>
-          <div class="gig-card gig-card--private">
-            <div class="gig-card__date">
-              <span class="gig-card__day">20.06.2026</span>
-              <span class="gig-card__time">16:00</span>
-            </div>
-            <h3 class="gig-card__title">Hochzeit</h3>
-            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </div>
-        </li>
+        <div class="gigs__month-group">
+          <h3 class="gigs__month">Juni 2026</h3>
+          <ul class="gigs__list" role="list">
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=Glotterfest+Nimburg"
+                 rel="noopener" target="_blank"
+                 aria-label="Glotterfest Nimburg am 19.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">19.06.2026</span>
+                  <span class="gig-card__time">19:00</span>
+                </div>
+                <h4 class="gig-card__title">Glotterfest</h4>
+                <p class="gig-card__venue">📍 Nimburg</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+            <li>
+              <div class="gig-card gig-card--private">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">20.06.2026</span>
+                  <span class="gig-card__time">16:00</span>
+                </div>
+                <h4 class="gig-card__title">Hochzeit</h4>
+                <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+              </div>
+            </li>
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=Weingut+Kiefer+Eichstetten"
+                 rel="noopener" target="_blank"
+                 aria-label="Weingut Kiefer Eichstetten am 21.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">21.06.2026</span>
+                  <span class="gig-card__time">19:00</span>
+                </div>
+                <h4 class="gig-card__title">Weingut Kiefer</h4>
+                <p class="gig-card__venue">📍 Eichstetten</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=Weingut+Kiefer+Eichstetten"
-             rel="noopener" target="_blank"
-             aria-label="Weingut Kiefer Eichstetten am 21.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">21.06.2026</span>
-              <span class="gig-card__time">19:00</span>
-            </div>
-            <h3 class="gig-card__title">Weingut Kiefer</h3>
-            <p class="gig-card__venue">📍 Eichstetten</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
+        <div class="gigs__month-group">
+          <h3 class="gigs__month">Juli 2026</h3>
+          <ul class="gigs__list" role="list">
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=47.979484,7.662488"
+                 rel="noopener" target="_blank"
+                 aria-label="Schlossparkfest Oberrimsingen am 11.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">11.07.2026</span>
+                  <span class="gig-card__time">18:00</span>
+                </div>
+                <h4 class="gig-card__title">Schlossparkfest</h4>
+                <p class="gig-card__venue">📍 Oberrimsingen · Eingang Großgasse</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=48.125066,7.884824"
+                 rel="noopener" target="_blank"
+                 aria-label="Waldfest Maleck am 20.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">20.07.2026</span>
+                  <span class="gig-card__time">18:00</span>
+                </div>
+                <h4 class="gig-card__title">Waldfest</h4>
+                <p class="gig-card__venue">📍 Waldfestplatz Am Buck · Emmendingen-Maleck</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=47.979484,7.662488"
-             rel="noopener" target="_blank"
-             aria-label="Schlossparkfest Oberrimsingen am 11.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">11.07.2026</span>
-              <span class="gig-card__time">18:00</span>
-            </div>
-            <h3 class="gig-card__title">Schlossparkfest</h3>
-            <p class="gig-card__venue">📍 Oberrimsingen · Eingang Großgasse</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
+        <div class="gigs__month-group">
+          <h3 class="gigs__month">September 2026</h3>
+          <ul class="gigs__list" role="list">
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=Hahlereifest+Gottenheim"
+                 rel="noopener" target="_blank"
+                 aria-label="Hahlereifest Gottenheim am 05.09.2026, 20:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">05.09.2026</span>
+                  <span class="gig-card__time">20:00</span>
+                </div>
+                <h4 class="gig-card__title">Hahlereifest</h4>
+                <p class="gig-card__venue">📍 Gottenheim</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
+                 rel="noopener" target="_blank"
+                 aria-label="Zwiebelkuchenfest Wasenweiler am 19.09.2026, 17:30 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">19.09.2026</span>
+                  <span class="gig-card__time">17:30</span>
+                </div>
+                <h4 class="gig-card__title">Zwiebelkuchenfest</h4>
+                <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.125066,7.884824"
-             rel="noopener" target="_blank"
-             aria-label="Waldfest Maleck am 20.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">20.07.2026</span>
-              <span class="gig-card__time">18:00</span>
-            </div>
-            <h3 class="gig-card__title">Waldfest</h3>
-            <p class="gig-card__venue">📍 Waldfestplatz Am Buck · Emmendingen-Maleck</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
+        <div class="gigs__month-group">
+          <h3 class="gigs__month">Oktober 2026</h3>
+          <ul class="gigs__list" role="list">
+            <li>
+              <div class="gig-card gig-card--private">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">02.10.2026</span>
+                  <span class="gig-card__time">16:00</span>
+                </div>
+                <h4 class="gig-card__title">Hochzeit</h4>
+                <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+              </div>
+            </li>
+            <li>
+              <a class="gig-card gig-card--link"
+                 href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
+                 rel="noopener" target="_blank"
+                 aria-label="Oktoberfest Wasenweiler am 24.10.2026, 18:00 Uhr, Standort auf Karte öffnen">
+                <div class="gig-card__date">
+                  <span class="gig-card__day">24.10.2026</span>
+                  <span class="gig-card__time">18:00</span>
+                </div>
+                <h4 class="gig-card__title">Oktoberfest</h4>
+                <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
+                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=Hahlereifest+Gottenheim"
-             rel="noopener" target="_blank"
-             aria-label="Hahlereifest Gottenheim am 05.09.2026, 20:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">05.09.2026</span>
-              <span class="gig-card__time">20:00</span>
-            </div>
-            <h3 class="gig-card__title">Hahlereifest</h3>
-            <p class="gig-card__venue">📍 Gottenheim</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
-             rel="noopener" target="_blank"
-             aria-label="Zwiebelkuchenfest Wasenweiler am 19.09.2026, 17:30 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">19.09.2026</span>
-              <span class="gig-card__time">17:30</span>
-            </div>
-            <h3 class="gig-card__title">Zwiebelkuchenfest</h3>
-            <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
-
-        <li>
-          <div class="gig-card gig-card--private">
-            <div class="gig-card__date">
-              <span class="gig-card__day">02.10.2026</span>
-              <span class="gig-card__time">16:00</span>
-            </div>
-            <h3 class="gig-card__title">Hochzeit</h3>
-            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </div>
-        </li>
-
-        <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
-             rel="noopener" target="_blank"
-             aria-label="Oktoberfest Wasenweiler am 24.10.2026, 18:00 Uhr, Standort auf Karte öffnen">
-            <div class="gig-card__date">
-              <span class="gig-card__day">24.10.2026</span>
-              <span class="gig-card__time">18:00</span>
-            </div>
-            <h3 class="gig-card__title">Oktoberfest</h3>
-            <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-            <span class="badge badge--confirmed">Bestätigt ✓</span>
-          </a>
-        </li>
-      </ul>
+      </div>
 
       <p class="gigs__cta">
         Du willst uns auf eine Bühne holen?
