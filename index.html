@@ -156,19 +156,22 @@
     <div class="videos__container">
       <h2 id="videos-title" class="section-title">Wie klingt das live?</h2>
       <p class="videos__subtitle">
-        Vier Eindrücke aus unseren Auftritten. Klick zum Abspielen.
+        Vier Live-Eindrücke. Klick öffnet das Video auf YouTube.
       </p>
 
-      <div class="videos__grid">
+      <div class="videos__grid videos__grid--landscape">
         <figure class="video-card">
-          <video controls preload="none"
-                 poster="assets/videos/live-echt-poster.jpg"
-                 playsinline
-                 aria-label="Live-Auftritt der Combo blech'n'takt">
-            <source src="assets/videos/live-echt.mp4" type="video/mp4">
-            Dein Browser unterstützt das Video-Tag nicht.
-            <a href="assets/videos/live-echt.mp4">Video herunterladen</a>
-          </video>
+          <div class="video-card__embed">
+            <a class="video-card__poster" href="https://youtu.be/L-jSIFcngzg"
+               target="_blank" rel="noopener"
+               aria-label="Video auf YouTube ansehen: Live. Echt. Blech'n'Takt.">
+              <img src="assets/videos/live-echt-poster.jpg" alt="" loading="lazy">
+              <span class="video-card__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="video-card__notice">Klick öffnet das Video auf YouTube (neuer Tab).</span>
+            </a>
+          </div>
           <figcaption class="video-card__caption">
             <strong>Live. Echt. Blech'<span class="red-n">n</span>'Takt.</strong>
             Ein Auftritt, der zeigt, was ohne Konserven geht.
@@ -176,47 +179,76 @@
         </figure>
 
         <figure class="video-card">
-          <video controls preload="none"
-                 poster="assets/videos/polka-poster.jpg"
-                 playsinline
-                 aria-label="Südböhmische Polka, live gespielt von blech'n'takt">
-            <source src="assets/videos/polka.mp4" type="video/mp4">
-            Dein Browser unterstützt das Video-Tag nicht.
-            <a href="assets/videos/polka.mp4">Video herunterladen</a>
-          </video>
+          <div class="video-card__embed">
+            <a class="video-card__poster" href="https://youtu.be/EqtS4aF9mco"
+               target="_blank" rel="noopener"
+               aria-label="Video auf YouTube ansehen: Oktoberfest Wasenweiler">
+              <img src="assets/videos/wasen-poster.jpg" alt="" loading="lazy">
+              <span class="video-card__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="video-card__notice">Klick öffnet das Video auf YouTube (neuer Tab).</span>
+            </a>
+          </div>
+          <figcaption class="video-card__caption">
+            <strong>Oktoberfest Wasenweiler.</strong>
+            Wenn die Bude mitsingt, läuft's.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="videos__grid videos__grid--portrait">
+        <figure class="video-card video-card--portrait">
+          <div class="video-card__embed">
+            <a class="video-card__poster" href="https://youtube.com/shorts/DJIiuMZNqpE"
+               target="_blank" rel="noopener"
+               aria-label="Video auf YouTube ansehen: Südböhmische Polka">
+              <img src="assets/videos/polka-poster.jpg" alt="" loading="lazy">
+              <span class="video-card__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="video-card__notice">Klick öffnet das Video auf YouTube (neuer Tab).</span>
+            </a>
+          </div>
           <figcaption class="video-card__caption">
             <strong>Südböhmische Polka.</strong>
-            Klassiker aus dem Repertoire, direkt von der Bühne, mit Originalklang.
+            Aus dem Repertoire, direkt von der Bühne, mit Originalklang.
           </figcaption>
         </figure>
 
-        <figure class="video-card">
-          <video controls preload="none"
-                 poster="assets/videos/auftritt-3-poster.jpg"
-                 playsinline
-                 aria-label="Open-Air-Auftritt bei Nacht von blech'n'takt">
-            <source src="assets/videos/auftritt-3.mp4" type="video/mp4">
-            Dein Browser unterstützt das Video-Tag nicht.
-            <a href="assets/videos/auftritt-3.mp4">Video herunterladen</a>
-          </video>
+        <figure class="video-card video-card--portrait">
+          <div class="video-card__embed">
+            <a class="video-card__poster" href="https://youtube.com/shorts/HAn1wl49QCs"
+               target="_blank" rel="noopener"
+               aria-label="Video auf YouTube ansehen: Open-Air-Auftritt bei Nacht">
+              <img src="assets/videos/auftritt-3-poster.jpg" alt="" loading="lazy">
+              <span class="video-card__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="video-card__notice">Klick öffnet das Video auf YouTube (neuer Tab).</span>
+            </a>
+          </div>
           <figcaption class="video-card__caption">
             <strong>Open-Air bei Nacht.</strong>
             Bühnenlichter, ganze Combo, ein Stück aus dem Set.
           </figcaption>
         </figure>
 
-        <figure class="video-card">
-          <video controls preload="none"
-                 poster="assets/videos/wasen-poster.jpg"
-                 playsinline
-                 aria-label="Oktoberfest Wasenweiler 2025 mit Publikum im Dreschschopf">
-            <source src="assets/videos/wasen.mp4" type="video/mp4">
-            Dein Browser unterstützt das Video-Tag nicht.
-            <a href="assets/videos/wasen.mp4">Video herunterladen</a>
-          </video>
+        <figure class="video-card video-card--portrait">
+          <div class="video-card__embed">
+            <a class="video-card__poster" href="https://youtube.com/shorts/EoaLid6r-DI"
+               target="_blank" rel="noopener"
+               aria-label="Video auf YouTube ansehen: Waldfest Maleck">
+              <img src="assets/videos/short-3-poster.jpg" alt="" loading="lazy">
+              <span class="video-card__play" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="video-card__notice">Klick öffnet das Video auf YouTube (neuer Tab).</span>
+            </a>
+          </div>
           <figcaption class="video-card__caption">
-            <strong>Oktoberfest Wasenweiler.</strong>
-            Wenn die Bude mitsingt, läuft's.
+            <strong>Waldfest Maleck.</strong>
+            "Die Melodie der Maus", Klassiker, den jeder kennt.
           </figcaption>
         </figure>
       </div>
