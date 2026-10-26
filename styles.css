@@ -1039,9 +1039,24 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
   opacity: 0.95;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   max-width: 580px;
   margin-inline: auto;
+}
+
+.booking__proof {
+  max-width: 580px;
+  margin: 0 auto var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.booking__proof-words {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  margin-bottom: var(--space-xs);
+}
+.booking__proof-text {
+  line-height: var(--line-height-relaxed);
 }
 
 .booking__cta-tel {
@@ -1057,6 +1072,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-decoration: none;
   min-height: 72px;
   transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+}
+@media (max-width: 479px) {
+  .booking__cta-tel { padding-inline: var(--space-md); white-space: nowrap; font-size: 26px; }
 }
 .booking__cta-tel:hover {
   background: var(--color-bg);
