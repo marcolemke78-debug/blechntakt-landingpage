@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="blech'n'takt">
   <meta property="og:title" content="blech'n'takt · Live-Combo vom Kaiserstuhl">
   <meta property="og:description" content="Sound, der groovt statt staubt. Blech-Combo mit Schlagzeug vom Kaiserstuhl. Rock, Pop & Blasmusik. Buchbar für Vereins-, Dorf- und Weinfeste, Hochzeiten und Open-Air-Sets. Booking: 0171/9900177">
-  <meta property="og:image" content="assets/icons/og-image.jpg">
+  <meta property="og:image" content="https://blechntakt.de/assets/icons/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Die sieben Musiker der Combo blech'n'takt mit Trompeten, Posaune, Tuba und Schlagzeug-Sticks vor grüner Hecke.">
@@ -29,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="blech'n'takt · Live-Combo vom Kaiserstuhl">
   <meta name="twitter:description" content="Sound, der groovt statt staubt. Rock, Pop & Blasmusik vom Kaiserstuhl. Booking: 0171/9900177">
-  <meta name="twitter:image" content="assets/icons/og-image.jpg">
+  <meta name="twitter:image" content="https://blechntakt.de/assets/icons/og-image.jpg">
 
   <!-- Structured data (schema.org) — Band + öffentliche Auftritte 2026 -->
   <script type="application/ld+json">
@@ -331,7 +331,7 @@
         Hochzeiten und alles, was nach echter Bühne ruft.
       </p>
       <div class="hero__cta-group">
-        <a href="tel:+4901719900177"
+        <a href="tel:+491719900177"
            class="btn btn--primary"
            aria-label="Jetzt anrufen für Booking-Anfrage, Telefonnummer 0171 9900177">
           <span aria-hidden="true">📞</span> Jetzt anrufen: 0171/9900177
@@ -340,7 +340,7 @@
       </div>
       <p class="hero__microtrust">
         Folge uns auf Instagram
-        <a href="https://instagram.com/blech_n_takt" rel="noopener">@blech_<span class="red-n">n</span>_takt</a>
+        <a href="https://instagram.com/blech_n_takt" rel="noopener" target="_blank">@blech_<span class="red-n">n</span>_takt</a>
         · Booking direkt am Telefon
       </p>
     </div>
@@ -607,8 +607,17 @@
   <!-- ===== TERMINE ===== -->
   <section class="gigs" id="termine" aria-labelledby="gigs-title">
     <div class="gigs__container">
-      <h2 id="gigs-title" class="section-title">Hier spielen wir 2026.</h2>
-      <p class="gigs__subtitle">Komm vorbei oder bring uns zu deiner Bühne.</p>
+      <!-- Update title + subtitle by hand once 2027 dates are confirmed -->
+      <h2 id="gigs-title" class="section-title">Unsere Saison 2026.</h2>
+      <p class="gigs__subtitle">9 Feste zwischen Juni und Oktober, danke fürs Mitfeiern! Für 2027 nehmen wir jetzt Anfragen an.</p>
+
+      <p class="gigs__cta">
+        Dein Fest 2027?
+        <a href="tel:+491719900177" class="btn btn--primary gigs__cta-btn"
+           aria-label="Termin 2027 anfragen, Telefonnummer 0171 9900177">
+          <span aria-hidden="true">📞</span> Termin anfragen: 0171/9900177
+        </a>
+      </p>
 
       <div class="gigs__months">
 
@@ -759,11 +768,6 @@
         </div>
 
       </div>
-
-      <p class="gigs__cta">
-        Du willst uns auf eine Bühne holen?
-        <a href="tel:+4901719900177" class="gigs__cta-link">📞 Anrufen: 0171/9900177</a>
-      </p>
     </div>
   </section>
 
@@ -816,7 +820,7 @@
 
       <p class="repertoire__cta">
         Vermisst du was? <strong>Frag uns. Wir lernen vieles dazu.</strong>
-        <a href="tel:+4901719900177">📞 0171/9900177</a>
+        <a href="tel:+491719900177">📞 0171/9900177</a>
       </p>
     </div>
   </section>
@@ -831,7 +835,7 @@
         klären Datum und Setup, und sagen dir ehrlich, ob wir passen, oder
         dir jemand anderen empfehlen.
       </p>
-      <a href="tel:+4901719900177" class="booking__cta-tel"
+      <a href="tel:+491719900177" class="booking__cta-tel"
          aria-label="Anrufen unter 0171 9900177">
         <span aria-hidden="true">📞</span> 0171 / 9900177
       </a>
@@ -874,15 +878,35 @@
 
     <nav class="site-footer__col" aria-label="Booking">
       <h3>Booking</h3>
-      <a href="tel:+4901719900177">📞 0171 / 9900177</a>
+      <a href="tel:+491719900177">📞 0171 / 9900177</a>
       <a href="mailto:kontakt@blechntakt.de">✉️ kontakt@blechntakt.de</a>
     </nav>
   </div>
 </footer>
 
-<a href="tel:+4901719900177" class="sticky-call" aria-label="Jetzt anrufen unter 0171 9900177">
+<a href="tel:+491719900177" class="sticky-call" aria-label="Jetzt anrufen unter 0171 9900177">
   <span aria-hidden="true">📞</span> Anrufen: 0171/9900177
 </a>
+
+<script>
+  // Mark gigs whose date (DD.MM.YYYY) lies before today as "gespielt"
+  (function () {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('.gig-card').forEach(function (card) {
+      var day = card.querySelector('.gig-card__day');
+      var parts = day ? day.textContent.trim().split('.') : [];
+      if (parts.length !== 3) return;
+      var date = new Date(+parts[2], +parts[1] - 1, +parts[0]);
+      if (date >= today) return;
+      card.classList.add('gig-card--past');
+      var label = document.createElement('span');
+      label.className = 'gig-card__past-label';
+      label.textContent = 'gespielt';
+      day.parentNode.appendChild(label);
+    });
+  })();
+</script>
 
 </body>
 </html>
