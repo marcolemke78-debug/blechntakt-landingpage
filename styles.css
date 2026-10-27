@@ -158,7 +158,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .red-n { color: var(--color-accent); }  /* logo letter, keeps exact brand red */
 
 /* Red focus ring would vanish on red surfaces */
-.booking :focus-visible, .btn--primary:focus-visible, .sticky-call:focus-visible { outline-color: var(--color-text); }
+.booking :focus-visible, .btn--primary:focus-visible, .sticky-call :focus-visible { outline-color: var(--color-text); }
 
 /* Even line lengths in headings (no lone word on the last line) */
 .hero__title, .section-title, .booking__title { text-wrap: balance; }
@@ -696,7 +696,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
-.gallery__item--tall { aspect-ratio: 3/4; }
+/* Portraits stay 4:3 in the phone strip, span two rows in the grid */
+.gallery__item--tall { aspect-ratio: 4/3; }
 
 @media (hover: hover) {
   .gallery__item:hover img { transform: scale(1.04); }
@@ -704,6 +705,8 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 @media (min-width: 720px) {
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+  .gallery__grid .gallery__tall { grid-row: span 2; }
+  .gallery__item--tall { aspect-ratio: auto; height: 100%; }
 }
 
 /* Phones: swipe strip like the shorts instead of a 1,000px tall grid */
@@ -751,7 +754,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .gigs__season .gigs__month { flex: 1; display: flex; justify-content: space-between; gap: var(--space-sm); }
 .gigs__season .gigs__month::after { content: "+"; font-size: 20px; line-height: 1; color: var(--color-accent-text); }
 .gigs__season[open] .gigs__month::after { content: "–"; }
-.gigs__season summary:hover .gigs__month { color: var(--color-text); }
+.gigs__season summary:hover { color: var(--color-text); }
 
 .gigs__month {
   font-size: 14px;
@@ -934,7 +937,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 
 @media (min-width: 720px) and (max-width: 1099px) {
-  .gigs__list { max-width: 640px; margin-inline: auto; }
+  .gigs__list { max-width: 640px; }
 }
 @media (min-width: 1100px) {
   .gigs__list { grid-template-columns: repeat(3, 1fr); }
@@ -961,7 +964,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .repertoire__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
@@ -1112,23 +1115,13 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-transform: uppercase;
 }
 .booking__refs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  max-width: 440px;
-  margin: var(--space-sm) auto 0;
-  text-align: left;
-  font-size: var(--font-size-small);
+  margin-top: var(--space-xs);
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: var(--line-height-relaxed);
+  text-wrap: pretty;
 }
-.booking__refs-group {
-  margin-bottom: 4px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  font-weight: 800;
-}
-.booking__refs li { padding: 3px 0; }
+.booking__refs strong { font-weight: 800; }
 
 /* Closing echo: the page ends on the call, not on the reference list */
 .booking__echo {
@@ -1290,19 +1283,27 @@ ul { padding: 0; margin: 0; list-style: none; }
   bottom: 0;
   display: none;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   background: var(--color-accent);
-  color: var(--color-text);
-  padding: 14px 16px;
-  font-weight: 700;
-  font-size: 16px;
-  text-decoration: none;
   z-index: var(--z-sticky);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
-.sticky-call:hover { background: var(--color-accent-hover); }
+.sticky-call__tel,
+.sticky-call__wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+}
+.sticky-call__tel { flex: 1; gap: 10px; padding: 0 12px; }
+.sticky-call__wa { width: 72px; border-left: 1px solid rgba(255, 255, 255, 0.35); }
+.sticky-call__wa .icon { width: 24px; height: 24px; }
+.sticky-call__tel:hover, .sticky-call__wa:hover { background: var(--color-accent-hover); }
+.sticky-call :focus-visible { outline-offset: -4px; }
 .sticky-call { transition: transform var(--transition-base); }
 .sticky-call--hidden { transform: translateY(110%); }
 
