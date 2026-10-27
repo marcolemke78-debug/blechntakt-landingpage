@@ -721,7 +721,7 @@
         if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
       });
       bar.classList.toggle('sticky-call--hidden', visible.size > 0);
-    });
+    }, { rootMargin: '0px 0px -100px 0px' });  // iOS Safari's bottom toolbar overlaps the last ~100px
     targets.forEach(function (t) { if (t) observer.observe(t); });
   })();
 </script>
