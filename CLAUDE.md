@@ -249,7 +249,7 @@ blechNtakt_Landingpage/
 | Section | Background | Begründung |
 |---|---|---|
 | Hero | `--color-bg` mit Foto-Overlay | Atmosphäre |
-| Über uns | `--color-bg` | Standard |
+| Über uns | `--color-bg` | Bühnenplan `.about__plan`: Besetzung als Plaketten, „Unser Set“, „Wir bringen mit / Ihr stellt“, gestrichelte Trenner |
 | Videos | `--color-bg-deep` | Tiefe-Effekt, "ins Video tauchen" |
 | Galerie | `--color-bg` | Bilder atmen lassen |
 | Termine | `--color-bg-deep` | abwechselnde Tiefen-Wirkung |
@@ -301,9 +301,9 @@ html { scroll-behavior: smooth; }
 
 ## Termine pflegen
 
-- **Kommende öffentliche Termine:** als Ticket-`<div class="gig-card">` (vorhandene Karte kopieren): Abriss `.gig-card__stub` mit Wochentag (Fr), Tag (25), Monat (Jun); in `.gig-card__main` die volle `.gig-card__day` `TT.MM.JJJJ` (unsichtbar, das JS markiert danach Vergangenes als „gespielt“), `.gig-card__time` „19:00 Uhr“, Titel als `h3`, Link nur auf „Auf Karte zeigen →“. Zusätzlich als `Event` im Schema.org-JSON-LD
+- **Kommende öffentliche Termine:** als Ticket-`<div class="gig-card">` (vorhandene Karte kopieren): Abriss `.gig-card__stub` mit Wochentag (Fr), Tag (25), Monat (Jun); in `.gig-card__main` den Wochentag ausgeschrieben für Screenreader (`.gig-card__sr` „Freitag, “) und die volle `.gig-card__day` `TT.MM.JJJJ` (unsichtbar, das JS markiert danach Vergangenes als „gespielt“), `.gig-card__time` „19:00 Uhr“, Titel als `h3`, Link nur auf „Auf Karte zeigen →“. Zusätzlich als `Event` im Schema.org-JSON-LD
 - **Private Termine** (Hochzeit, Geburtstag …): nur in der Zeile `.gigs__private` (Herz-Icon + „Dazu N private Feiern: …“), nie als Karte, nie im JSON-LD
-- **Abgeschlossene Saison:** in die kompakte Liste `.gigs__past` verschieben, Events aus dem JSON-LD entfernen
+- **Abgeschlossene Saison:** in die kompakte Liste `.gigs__past` verschieben (steckt in der einklappbaren `<details class="gigs__season">`, Überschrift in `<summary>` anpassen), Events aus dem JSON-LD entfernen
 - **Bei jeder CSS-Änderung** `styles.css?v=JJJJ-MM-TT` in allen 3 HTML-Dateien hochzählen (Safari/GitHub-Pages-Cache)
 
 ## Deployment

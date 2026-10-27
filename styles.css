@@ -348,7 +348,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 4px;
   transition: color var(--transition-base);
 }
@@ -411,30 +411,30 @@ ul { padding: 0; margin: 0; list-style: none; }
   align-items: center;
 }
 
-.about__points {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+/* Stage plan: line-up, set and rider, divided by the ticket perforation */
+.about__plan { display: flex; flex-direction: column; }
+.about__plan-row { padding: var(--space-md) 0; border-top: 2px dashed rgba(255, 255, 255, 0.18); }
+.about__plan-row:last-child { border-bottom: 2px dashed rgba(255, 255, 255, 0.18); }
+.about__plan-label {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-micro);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent-text);
 }
-.about__points li {
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-bg-card);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+.about__lineup { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.about__lineup li {
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
 }
-.about__icon { width: 28px; height: 28px; color: var(--color-accent-text); }
-.about__points strong { display: block; margin-bottom: 4px; color: var(--color-text); }
-.about__points li > div { color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
-
-.about__events {
-  font-size: var(--font-size-body);
-  color: var(--color-text-muted);
-  padding: var(--space-md) 0;
-  border-top: 1px solid var(--color-border);
-}
-.about__events strong { color: var(--color-text); }
+.about__lineup .about__lineup-lead { background: var(--color-accent); border-color: var(--color-accent); }
+.about__plan-text { color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.about__plan-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.about__plan-items { font-size: 17px; font-weight: 800; line-height: 1.4; text-wrap: balance; }
 
 .about__media {
   margin: 0;
@@ -706,9 +706,19 @@ ul { padding: 0; margin: 0; list-style: none; }
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
 }
 
-/* 9 photos: phones show the last one full width, larger screens a clean 3x3 */
+/* Phones: swipe strip like the shorts instead of a 1,000px tall grid */
 @media (max-width: 719px) {
-  .gallery__grid li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .gallery__grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--space-md));
+    padding: 0 var(--space-md) var(--space-xs);
+    scroll-padding-inline: var(--space-md);
+  }
+  .gallery__grid li { scroll-snap-align: start; }
 }
 
 /* ============================================================
@@ -729,6 +739,19 @@ ul { padding: 0; margin: 0; list-style: none; }
   color: var(--color-text-muted);
   margin-bottom: var(--space-xl);
 }
+
+.gigs__season summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+.gigs__season summary::-webkit-details-marker { display: none; }
+.gigs__season .gigs__month { flex: 1; display: flex; justify-content: space-between; gap: var(--space-sm); }
+.gigs__season .gigs__month::after { content: "+"; font-size: 20px; line-height: 1; color: var(--color-accent-text); }
+.gigs__season[open] .gigs__month::after { content: "–"; }
+.gigs__season summary:hover .gigs__month { color: var(--color-text); }
 
 .gigs__month {
   font-size: 14px;
@@ -784,7 +807,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-variant-numeric: tabular-nums;
   text-transform: uppercase;
 }
-.gig-card__wd, .gig-card__mm { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; }
+.gig-card__wd, .gig-card__mm { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; }
 .gig-card__dd { font-size: 44px; font-weight: 900; line-height: 1; letter-spacing: -1px; }
 @media (max-width: 479px) {
   .gig-card { --stub: 72px; }
@@ -826,6 +849,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   margin-bottom: var(--space-xs);
 }
 /* The stub shows the date; the full date stays for screen readers and the "gespielt" script */
+.gig-card__sr,
 .gig-card__day {
   position: absolute;
   width: 1px; height: 1px;
@@ -881,7 +905,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   line-height: var(--line-height-relaxed);
 }
 .gigs__private-label { font-weight: 700; color: var(--color-text-muted); }
-.gigs__private + .gigs__month { margin-top: var(--space-xl); }
+.gigs__private + .gigs__month,
+.gigs__private + .gigs__season { margin-top: var(--space-xl); }
+.gigs__season[open] .gigs__month { margin-bottom: var(--space-md); }
 
 /* Past season: compact reference list instead of cards */
 .gigs__past { columns: 2; column-gap: var(--space-md); }
@@ -907,8 +933,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   .gigs__past { column-gap: var(--space-xl); }
 }
 
-@media (min-width: 720px) {
-  .gigs__list { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 720px) and (max-width: 1099px) {
+  .gigs__list { max-width: 640px; margin-inline: auto; }
 }
 @media (min-width: 1100px) {
   .gigs__list { grid-template-columns: repeat(3, 1fr); }
@@ -1015,6 +1041,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .repertoire { overflow-x: clip; }  /* tilted sheets must never cause sideways scroll */
 .rep-cat { width: 100%; max-width: 560px; }
+@media (min-width: 600px) and (max-width: 959px) { .rep-cat { justify-self: center; max-width: 600px; } }
 @media (max-width: 479px) {
   .rep-cat { transform: rotate(-0.6deg); }
   .rep-cat:nth-child(2) { transform: rotate(0.5deg); }
@@ -1149,10 +1176,33 @@ ul { padding: 0; margin: 0; list-style: none; }
   transform: translateY(-2px);
 }
 
-.booking__alt {
-  margin-top: var(--space-lg);
+.booking__wa {
+  position: relative;
   display: flex;
-  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  min-height: 52px;
+  margin: var(--space-md) auto 0;
+  padding: 12px 24px;
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.booking__wa:hover { background: var(--color-text); color: var(--color-accent); }
+.booking__wa .icon { width: 22px; height: 22px; }
+
+.booking__alt {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  font-size: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
