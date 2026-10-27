@@ -369,8 +369,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 @media (min-width: 960px) {
   .hero {
     grid-template-columns: 1fr 1fr;
+    min-height: min(calc(100svh - 80px), 760px);
     padding-top: var(--space-2xl);
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
   }
   .hero__content { order: 1; }
   .hero__media { order: 2; }
@@ -434,7 +435,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .about__lineup .about__lineup-lead { background: var(--color-accent); border-color: var(--color-accent); }
 .about__plan-text { color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
 .about__plan-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-.about__plan-items { font-size: 17px; font-weight: 800; line-height: 1.4; text-wrap: balance; }
+.about__plan-items { font-size: 17px; font-weight: 800; line-height: 1.5; }
 
 .about__media {
   margin: 0;
@@ -477,6 +478,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   align-items: start;
 }
 .videos__grid:last-of-type { margin-bottom: var(--space-xl); }
+.videos__grid--landscape { align-items: stretch; }
 .videos__grid.videos__grid--portrait {
   max-width: 900px;
   margin-left: auto;
@@ -1044,7 +1046,23 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .repertoire { overflow-x: clip; }  /* tilted sheets must never cause sideways scroll */
 .rep-cat { width: 100%; max-width: 560px; }
-@media (min-width: 600px) and (max-width: 959px) { .rep-cat { justify-self: center; max-width: 600px; } }
+@media (min-width: 600px) and (max-width: 959px) { .rep-cat { max-width: 600px; } }
+/* Phones: the three setlists side by side as a swipe strip, like gallery and shorts */
+@media (max-width: 719px) {
+  .repertoire__grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 90%;
+    gap: var(--space-md);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--space-md));
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    scroll-padding-inline: var(--space-md);
+  }
+  .rep-cat { max-width: none; scroll-snap-align: start; padding-inline: 20px; }
+  .rep-cat__list li { font-size: 16px; gap: 10px; }
+}
 @media (max-width: 479px) {
   .rep-cat { transform: rotate(-0.6deg); }
   .rep-cat:nth-child(2) { transform: rotate(0.5deg); }
@@ -1242,7 +1260,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   margin-top: var(--space-xs);
 }
 
-.site-footer__col h3 {
+.site-footer__col h2 {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -1304,8 +1322,13 @@ ul { padding: 0; margin: 0; list-style: none; }
 .sticky-call__wa .icon { width: 24px; height: 24px; }
 .sticky-call__tel:hover, .sticky-call__wa:hover { background: var(--color-accent-hover); }
 .sticky-call :focus-visible { outline-offset: -4px; }
-.sticky-call { transition: transform var(--transition-base); }
-.sticky-call--hidden { transform: translateY(110%); }
+.sticky-call { transition: transform var(--transition-base), visibility 0s linear 0s; }
+/* Hidden bar also leaves the tab order and VoiceOver, after the slide-out */
+.sticky-call--hidden {
+  transform: translateY(110%);
+  visibility: hidden;
+  transition: transform var(--transition-base), visibility 0s linear 0.2s;
+}
 
 @media (max-width: 719px) {
   .sticky-call { display: flex; }
