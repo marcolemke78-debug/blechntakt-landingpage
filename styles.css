@@ -249,6 +249,10 @@ ul { padding: 0; margin: 0; list-style: none; }
   border-radius: var(--radius-md);
   min-height: 56px;
 }
+/* Very narrow phones: keep "Jetzt anrufen: 0171/..." on one line */
+@media (max-width: 389px) {
+  .btn--primary { padding-inline: 16px; font-size: 16px; gap: 8px; white-space: nowrap; }
+}
 .btn--primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
 
 .badge {
@@ -283,9 +287,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   top: 0;
   z-index: var(--z-header);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm);
   padding: 12px 16px;
   background: rgba(22, 22, 24, 0.85);
   backdrop-filter: blur(12px);
@@ -297,10 +301,14 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .site-header__nav {
   display: flex;
-  gap: 6px;
+  gap: var(--space-sm);
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+/* Phones: one header row with logo, Termine and Booking only */
+.site-header__nav-wide { display: none; }
+.site-header .logo-text { font-size: 18px; }
+@media (max-width: 359px) {
+  .site-header__nav a[href="#termine"] { display: none; }
 }
 .site-header__nav a {
   text-decoration: none;
@@ -326,12 +334,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 .site-header__nav-cta::after { content: ""; position: absolute; inset: -6px 0; }
 
 @media (min-width: 720px) {
-  .site-header {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
-    padding: 16px 20px;
-  }
+  .site-header { padding: 16px 20px; }
+  .site-header__nav-wide { display: inline; }
+  .site-header .logo-text { font-size: 22px; }
   .site-header__nav { gap: var(--space-md); }
   .site-header__nav a { font-size: 15px; padding: 12px 4px; margin-block: -4px; }
   .site-header__nav-cta { padding: 8px 18px !important; }
@@ -401,6 +406,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   padding-bottom: 4px;
   transition: color var(--transition-base);
 }
+/* Invisible extension: 44px tap target without changing the look */
+.hero__secondary-link, .booking__alt a { position: relative; }
+.hero__secondary-link::after, .booking__alt a::after { content: ""; position: absolute; inset: -12px -4px; }
 .hero__secondary-link:hover { color: var(--color-text); border-bottom-color: var(--color-accent-text); }
 
 .hero__microtrust {
@@ -1140,18 +1148,17 @@ ul { padding: 0; margin: 0; list-style: none; }
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--color-text-faint);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 4px;
 }
 .site-footer__col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
 }
 .site-footer__col a {
   color: var(--color-text-soft);
   text-decoration: none;
   font-size: 14px;
-  padding: 4px 0;
+  padding: 12px 0;
   transition: color var(--transition-base);
 }
 .site-footer__col a:hover { color: var(--color-accent-text); }
