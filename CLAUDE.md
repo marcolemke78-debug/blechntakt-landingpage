@@ -18,7 +18,7 @@ Tech-Affinität gemischt — Page muss auf Boomer-Smartphone genauso funktionier
 
 ## Tonalität & Sprache
 
-- **Du-Form** durchgängig, locker, mit Augenzwinkern, nahbar
+- **Ihr-Form** durchgängig (entschieden 27.10.2026: Zielgruppe sind Vereine, Festkomitees, Brautpaare), locker, mit Augenzwinkern, nahbar. Beispiel: „Lasst uns reden.“, „Vermisst ihr was? Fragt uns.“
 - **Kein Marketing-Sprech**, keine Buzzwords ("revolutionär", "einzigartig", "Nr. 1")
 - Sprache wie aus dem Info-Doc (07_Marketing/Info_Material): "Tradition trifft Moderne", "Blasmusik mit Herz 'n Beat", "Show mit Zug"
 - Direkt, bodenständig, regional verwurzelt
@@ -29,7 +29,7 @@ Tech-Affinität gemischt — Page muss auf Boomer-Smartphone genauso funktionier
 - **Frontend:** Vanilla HTML5 + CSS3 (kein Build-Step)
 - **Keine Frameworks:** kein Tailwind, kein Bootstrap, kein React/Vue
 - **JavaScript:** nur wenn strikt nötig (z. B. Mobile-Menü, Video-Lazy-Load), Vanilla JS
-- **Fonts:** Inter via Google Fonts (Brand-Standard, weights 400/600/700/800/900)
+- **Fonts:** Inter self-hosted als Variable Font (`assets/fonts/inter-latin.woff2` + `-latin-ext`, alle Weights 400–900 in einer Datei), kein Google CDN (DSGVO)
 - **Assets:** SVG für Icons; JPG/WebP für Fotos (komprimiert); Videos extern eingebettet (Insta/YouTube), nicht selbst gehostet
 
 ## Design-Prinzipien
@@ -299,9 +299,16 @@ html { scroll-behavior: smooth; }
 - Hero-Foto: WebP mit JPG-Fallback, max ~80 KB
 - Weitere Fotos: lazy-loaded (`loading="lazy"`), max ~60 KB pro Bild
 - Videos: extern eingebettet (Insta/YouTube), nicht autoplay, lazy
-- Inter-Font: nur die wirklich genutzten Weights (z. B. 400, 700, 900)
+- Inter-Font: eine Variable-Font-Datei je Subset (nicht pro Weight duplizieren)
 - Progressive Enhancement: Page funktioniert ohne JavaScript
 - Mobile-First: Base-CSS = 1fr-Stack, dann `min-width`-Queries
+
+## Termine pflegen
+
+- **Kommende öffentliche Termine:** als `.gig-card` (Titel = `h3`, Datum mit Jahr `TT.MM.JJJJ`, das JS markiert Vergangenes als „gespielt“) und zusätzlich als `Event` im Schema.org-JSON-LD
+- **Private Termine** (Hochzeit, Geburtstag …): nur in der Zeile `.gigs__private` („🤍 Dazu N private Feiern: …“), nie als Karte, nie im JSON-LD
+- **Abgeschlossene Saison:** in die kompakte Liste `.gigs__past` verschieben, Events aus dem JSON-LD entfernen
+- **Bei jeder CSS-Änderung** `styles.css?v=JJJJ-MM-TT` in allen 3 HTML-Dateien hochzählen (Safari/GitHub-Pages-Cache)
 
 ## Deployment
 
@@ -338,7 +345,7 @@ html { scroll-behavior: smooth; }
 - Akzent-Rot: `#B22325` (für Flächen, Text, Rahmen, das N)
 - Weiß: `#FFFFFF`, gedämpft: `rgba(255,255,255,0.85)`, Footer: `rgba(255,255,255,0.4)`
 - Grün-Check: `#22C55E` (für ✓-Listen)
-- Font: Inter (Google Fonts)
+- Font: Inter (self-hosted, Variable Font)
 - Tagline: "Follow the Takt!" / "Blasmusik mit Herz 'n Beat"
 - Visuelle Signature: schwarzer Look, Hosenträger, **rote Schuhe**
 
