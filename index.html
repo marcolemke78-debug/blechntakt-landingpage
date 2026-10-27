@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Sound, der groovt statt staubt. Rock, Pop & Blasmusik vom Kaiserstuhl. Booking: 0171/9900177">
   <meta name="twitter:image" content="https://blechntakt.de/assets/icons/og-image.jpg">
 
-  <!-- Structured data (schema.org) — Band + öffentliche Auftritte 2026 -->
+  <!-- Structured data (schema.org) — Band + öffentliche Auftritte 2026/2027 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -288,6 +288,83 @@
         },
         "image": "https://blechntakt.de/assets/icons/og-image.jpg",
         "description": "blech'n'takt live beim Oktoberfest im Dreschschopf Wasenweiler."
+      },
+      {
+        "@type": "Event",
+        "name": "blech'n'takt live: Burkheim Open-Air",
+        "startDate": "2027-06-25T19:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Brünnele-Garten Burkheim",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vogtsburg-Burkheim",
+            "postalCode": "79235",
+            "addressRegion": "Baden-Württemberg",
+            "addressCountry": "DE"
+          }
+        },
+        "performer": {
+          "@id": "https://blechntakt.de/#band"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Stadtmusik Burkheim"
+        },
+        "image": "https://blechntakt.de/assets/icons/og-image.jpg",
+        "description": "blech'n'takt live beim Open-Air im Brünnele-Garten in Burkheim, zusammen mit der Stadtmusik Burkheim."
+      },
+      {
+        "@type": "Event",
+        "name": "blech'n'takt live: Schwibbogenfest Eichstetten",
+        "startDate": "2027-09-03T18:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Schwibbogenfest Eichstetten",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Eichstetten am Kaiserstuhl",
+            "postalCode": "79356",
+            "addressRegion": "Baden-Württemberg",
+            "addressCountry": "DE"
+          }
+        },
+        "performer": {
+          "@id": "https://blechntakt.de/#band"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Musikverein Eichstetten"
+        },
+        "image": "https://blechntakt.de/assets/icons/og-image.jpg",
+        "description": "blech'n'takt live beim Schwibbogenfest des Musikvereins Eichstetten."
+      },
+      {
+        "@type": "Event",
+        "name": "blech'n'takt live: Zwiebelkuchenfest Burkheim",
+        "startDate": "2027-09-05T18:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Zwiebelkuchenfest Burkheim",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vogtsburg-Burkheim",
+            "postalCode": "79235",
+            "addressRegion": "Baden-Württemberg",
+            "addressCountry": "DE"
+          }
+        },
+        "performer": {
+          "@id": "https://blechntakt.de/#band"
+        },
+        "image": "https://blechntakt.de/assets/icons/og-image.jpg",
+        "description": "blech'n'takt live beim Zwiebelkuchenfest in Burkheim am Kaiserstuhl."
       }
     ]
   }
@@ -295,7 +372,7 @@
 
   <link rel="preload" as="image" href="assets/photos/hero-promo.webp" media="(min-width: 720px)">
   <link rel="preload" as="image" href="assets/photos/hero-promo-mobile.webp" media="(max-width: 719px)">
-  <link rel="stylesheet" href="styles.css?v=2026-10-26">
+  <link rel="stylesheet" href="styles.css?v=2026-10-27">
 
   <!-- Always open the page at the top, ignore browser scroll restoration -->
   <script>history.scrollRestoration = 'manual';</script>
@@ -649,167 +726,108 @@
   <!-- ===== TERMINE ===== -->
   <section class="gigs" id="termine" aria-labelledby="gigs-title">
     <div class="gigs__container">
-      <!-- Update title + subtitle by hand once 2027 dates are confirmed -->
-      <h2 id="gigs-title" class="section-title">Unsere Saison 2026.</h2>
-      <p class="gigs__subtitle">9 Feste zwischen Juni und Oktober, danke fürs Mitfeiern! Für 2027 nehmen wir jetzt Anfragen an.</p>
+      <!-- Upcoming dates as .gig-card (JS marks past ones as "gespielt");
+           move finished seasons into the compact .gigs__past list below -->
+      <h2 id="gigs-title" class="section-title">Unsere Termine 2027.</h2>
+      <p class="gigs__subtitle">Die ersten Feste stehen. Für weitere Termine nehmen wir gern Anfragen an.</p>
+      <a href="tel:+491719900177" class="btn btn--primary gigs__cta-btn"
+         aria-label="Termin 2027 anfragen, Telefonnummer 0171 9900177">
+        <span aria-hidden="true">📞</span> Termin anfragen: 0171/9900177
+      </a>
 
-      <p class="gigs__cta">
-        Dein Fest 2027?
-        <a href="tel:+491719900177" class="btn btn--primary gigs__cta-btn"
-           aria-label="Termin 2027 anfragen, Telefonnummer 0171 9900177">
-          <span aria-hidden="true">📞</span> Termin anfragen: 0171/9900177
-        </a>
-      </p>
+      <ul class="gigs__list" role="list">
+        <li>
+          <div class="gig-card gig-card--private">
+            <div class="gig-card__date">
+              <span class="gig-card__day">14.01.2027</span>
+            </div>
+            <h4 class="gig-card__title">Abschlussfeier</h4>
+            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+          </div>
+        </li>
+        <li>
+          <div class="gig-card gig-card--private">
+            <div class="gig-card__date">
+              <span class="gig-card__day">05.06.2027</span>
+            </div>
+            <h4 class="gig-card__title">Weinwanderung</h4>
+            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+          </div>
+        </li>
+        <li>
+          <div class="gig-card gig-card--private">
+            <div class="gig-card__date">
+              <span class="gig-card__day">19.06.2027</span>
+            </div>
+            <h4 class="gig-card__title">Hochzeit</h4>
+            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+          </div>
+        </li>
+        <li>
+          <a class="gig-card gig-card--link"
+             href="https://www.google.com/maps/search/?api=1&query=48.1011128,7.6001133"
+             rel="noopener" target="_blank"
+             aria-label="Burkheim Open-Air am 25.06.2027, 19:00 Uhr, Standort auf Karte öffnen">
+            <div class="gig-card__date">
+              <span class="gig-card__day">25.06.2027</span>
+              <span class="gig-card__time">19:00</span>
+            </div>
+            <h4 class="gig-card__title">Burkheim Open-Air</h4>
+            <p class="gig-card__venue">📍 Brünnele-Garten · Burkheim · mit der Stadtmusik Burkheim</p>
+            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+          </a>
+        </li>
+        <li>
+          <a class="gig-card gig-card--link"
+             href="https://www.google.com/maps/search/?api=1&query=48.0942893,7.7453734"
+             rel="noopener" target="_blank"
+             aria-label="Schwibbogenfest Eichstetten am 03.09.2027, 18:00 Uhr, Standort auf Karte öffnen">
+            <div class="gig-card__date">
+              <span class="gig-card__day">03.09.2027</span>
+              <span class="gig-card__time">18:00</span>
+            </div>
+            <h4 class="gig-card__title">Schwibbogenfest</h4>
+            <p class="gig-card__venue">📍 Eichstetten · beim Musikverein Eichstetten</p>
+            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+          </a>
+        </li>
+        <li>
+          <a class="gig-card gig-card--link"
+             href="https://www.google.com/maps/search/?api=1&query=48.1013433,7.5982901"
+             rel="noopener" target="_blank"
+             aria-label="Zwiebelkuchenfest Burkheim am 05.09.2027, 18:00 Uhr, Standort auf Karte öffnen">
+            <div class="gig-card__date">
+              <span class="gig-card__day">05.09.2027</span>
+              <span class="gig-card__time">18:00</span>
+            </div>
+            <h4 class="gig-card__title">Zwiebelkuchenfest</h4>
+            <p class="gig-card__venue">📍 Burkheim</p>
+            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
+          </a>
+        </li>
+        <li>
+          <div class="gig-card gig-card--private">
+            <div class="gig-card__date">
+              <span class="gig-card__day">01.10.2027</span>
+            </div>
+            <h4 class="gig-card__title">70. Geburtstag</h4>
+            <p class="gig-card__venue">🤍 Private Veranstaltung</p>
+          </div>
+        </li>
+      </ul>
 
-      <div class="gigs__months">
-
-        <div class="gigs__month-group">
-          <h3 class="gigs__month">Juni 2026</h3>
-          <ul class="gigs__list" role="list">
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=Glotterfest+Nimburg"
-                 rel="noopener" target="_blank"
-                 aria-label="Glotterfest Nimburg am 19.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">19.06.2026</span>
-                  <span class="gig-card__time">19:00</span>
-                </div>
-                <h4 class="gig-card__title">Glotterfest</h4>
-                <p class="gig-card__venue">📍 Nimburg</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=Weingut+Kiefer+Eichstetten"
-                 rel="noopener" target="_blank"
-                 aria-label="Weingut Kiefer Eichstetten am 21.06.2026, 19:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">21.06.2026</span>
-                  <span class="gig-card__time">19:00</span>
-                </div>
-                <h4 class="gig-card__title">Weingut Kiefer</h4>
-                <p class="gig-card__venue">📍 Eichstetten</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="gigs__month-group">
-          <h3 class="gigs__month">Juli 2026</h3>
-          <ul class="gigs__list" role="list">
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=47.979484,7.662488"
-                 rel="noopener" target="_blank"
-                 aria-label="Schlossparkfest Oberrimsingen am 11.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">11.07.2026</span>
-                  <span class="gig-card__time">18:00</span>
-                </div>
-                <h4 class="gig-card__title">Schlossparkfest</h4>
-                <p class="gig-card__venue">📍 Oberrimsingen · Eingang Großgasse</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=48.125066,7.884824"
-                 rel="noopener" target="_blank"
-                 aria-label="Waldfest Maleck am 20.07.2026, 18:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">20.07.2026</span>
-                  <span class="gig-card__time">18:00</span>
-                </div>
-                <h4 class="gig-card__title">Waldfest</h4>
-                <p class="gig-card__venue">📍 Waldfestplatz Am Buck · Emmendingen-Maleck</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="gigs__month-group">
-          <h3 class="gigs__month">September 2026</h3>
-          <ul class="gigs__list" role="list">
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=Hahlereifest+Gottenheim"
-                 rel="noopener" target="_blank"
-                 aria-label="Hahlereifest Gottenheim am 05.09.2026, 20:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">05.09.2026</span>
-                  <span class="gig-card__time">20:00</span>
-                </div>
-                <h4 class="gig-card__title">Hahlereifest</h4>
-                <p class="gig-card__venue">📍 Gottenheim</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=48.100663,7.597768"
-                 rel="noopener" target="_blank"
-                 aria-label="Burkheimer Weintage am 07.09.2026, 18:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">07.09.2026</span>
-                  <span class="gig-card__time">18:00</span>
-                </div>
-                <h4 class="gig-card__title">Burkheimer Weintage</h4>
-                <p class="gig-card__venue">📍 Hof der Stadtkapelle · Burkheim</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
-                 rel="noopener" target="_blank"
-                 aria-label="Zwiebelkuchenfest Wasenweiler am 19.09.2026, 18:30 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">19.09.2026</span>
-                  <span class="gig-card__time">18:30</span>
-                </div>
-                <h4 class="gig-card__title">Zwiebelkuchenfest</h4>
-                <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="gigs__month-group">
-          <h3 class="gigs__month">Oktober 2026</h3>
-          <ul class="gigs__list" role="list">
-            <li>
-              <div class="gig-card gig-card--private">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">02.10.2026</span>
-                  <span class="gig-card__time">16:00</span>
-                </div>
-                <h4 class="gig-card__title">Hochzeit</h4>
-                <p class="gig-card__venue">🤍 Private Veranstaltung</p>
-              </div>
-            </li>
-            <li>
-              <a class="gig-card gig-card--link"
-                 href="https://www.google.com/maps/search/?api=1&query=48.048461,7.686421"
-                 rel="noopener" target="_blank"
-                 aria-label="Oktoberfest Wasenweiler am 24.10.2026, 18:00 Uhr, Standort auf Karte öffnen">
-                <div class="gig-card__date">
-                  <span class="gig-card__day">24.10.2026</span>
-                  <span class="gig-card__time">18:00</span>
-                </div>
-                <h4 class="gig-card__title">Oktoberfest</h4>
-                <p class="gig-card__venue">📍 Dreschschopf Wasenweiler · Im Bürgerstock, Ihringen</p>
-                <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
+      <h3 class="gigs__month">Saison 2026 · 9 Feste, danke fürs Mitfeiern!</h3>
+      <ul class="gigs__past" role="list">
+        <li><span class="gigs__past-date">19.06.</span> <span class="gigs__past-name">Glotterfest</span> <span class="gigs__past-place">Nimburg</span></li>
+        <li><span class="gigs__past-date">21.06.</span> <span class="gigs__past-name">Weingut Kiefer</span> <span class="gigs__past-place">Eichstetten</span></li>
+        <li><span class="gigs__past-date">11.07.</span> <span class="gigs__past-name">Schlossparkfest</span> <span class="gigs__past-place">Oberrimsingen</span></li>
+        <li><span class="gigs__past-date">20.07.</span> <span class="gigs__past-name">Waldfest</span> <span class="gigs__past-place">Emmendingen-Maleck</span></li>
+        <li><span class="gigs__past-date">05.09.</span> <span class="gigs__past-name">Hahlereifest</span> <span class="gigs__past-place">Gottenheim</span></li>
+        <li><span class="gigs__past-date">07.09.</span> <span class="gigs__past-name">Burkheimer Weintage</span> <span class="gigs__past-place">Burkheim</span></li>
+        <li><span class="gigs__past-date">19.09.</span> <span class="gigs__past-name">Zwiebelkuchenfest</span> <span class="gigs__past-place">Wasenweiler</span></li>
+        <li><span class="gigs__past-date">02.10.</span> <span class="gigs__past-name">Hochzeit</span> <span class="gigs__past-place">privat</span></li>
+        <li><span class="gigs__past-date">24.10.</span> <span class="gigs__past-name">Oktoberfest</span> <span class="gigs__past-place">Wasenweiler</span></li>
+      </ul>
     </div>
   </section>
 

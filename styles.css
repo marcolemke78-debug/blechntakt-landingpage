@@ -799,12 +799,6 @@ ul { padding: 0; margin: 0; list-style: none; }
   margin-bottom: var(--space-xl);
 }
 
-.gigs__months {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
 .gigs__month {
   font-size: 14px;
   font-weight: 700;
@@ -897,19 +891,29 @@ ul { padding: 0; margin: 0; list-style: none; }
   color: var(--color-text-soft);
 }
 
-.gigs__cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-sm) var(--space-md);
-  margin: calc(-1 * var(--space-md)) 0 var(--space-xl);
-  font-size: var(--font-size-lead);
-  font-weight: 700;
-  color: var(--color-text);
-}
-.gigs__cta-btn { flex: 0 1 auto; }
+.gigs__subtitle + .gigs__cta-btn { margin-top: calc(-1 * var(--space-md)); }
+.gigs__cta-btn { margin-bottom: var(--space-xl); }
 @media (max-width: 479px) {
   .gigs__cta-btn { width: 100%; padding-inline: var(--space-sm); font-size: 17px; }
+}
+
+.gigs__list + .gigs__month { margin-top: var(--space-xl); }
+
+/* Past season: compact reference list instead of cards */
+.gigs__past { columns: 1; column-gap: var(--space-xl); }
+.gigs__past li {
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  column-gap: var(--space-sm);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  break-inside: avoid;
+}
+.gigs__past-date { color: var(--color-text-soft); font-weight: 700; font-variant-numeric: tabular-nums; }
+.gigs__past-name { font-weight: 700; }
+.gigs__past-place { grid-column: 2; color: var(--color-text-soft); font-size: var(--font-size-small); }
+@media (min-width: 720px) {
+  .gigs__past { columns: 2; }
 }
 
 @media (min-width: 720px) {
