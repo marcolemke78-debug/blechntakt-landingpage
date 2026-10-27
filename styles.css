@@ -940,6 +940,15 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-size: 15px;
 }
 .rep-cat__list li:last-child { border-bottom: none; }
+.rep-cat__video {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 44px; margin-block: -11px;
+  color: var(--color-text);
+  text-decoration: underline; text-decoration-color: var(--color-accent-text);
+  text-underline-offset: 4px;
+}
+.rep-cat__video .icon { color: var(--color-accent-text); width: 0.85em; height: 0.85em; }
+.rep-cat__video:hover { color: var(--color-accent-text); }
 
 .repertoire__cta {
   color: var(--color-text-muted);
