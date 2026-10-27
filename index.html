@@ -159,7 +159,7 @@
   <link rel="preload" as="image" type="image/webp"
         imagesrcset="assets/photos/hero-promo-mobile.webp 720w, assets/photos/hero-promo.webp 1100w"
         imagesizes="(max-width: 720px) 100vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=2026-10-27k">
+  <link rel="stylesheet" href="styles.css?v=2026-10-27l">
 
   <!-- Always open the page at the top, ignore browser scroll restoration -->
   <script>history.scrollRestoration = 'manual';</script>
@@ -173,6 +173,7 @@
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
   <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
   <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
@@ -214,10 +215,10 @@
            aria-label="Jetzt anrufen für Booking-Anfrage, Telefonnummer 0171 9900177">
           <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Jetzt anrufen: 0171/9900177
         </a>
-        <a href="#termine" class="hero__secondary-link">Termine ansehen ↓</a>
+        <a href="#videos" class="hero__secondary-link">So klingt's live ↓</a>
       </div>
       <p class="hero__microtrust">
-        9 Feste in 2026, gespielt u.&nbsp;a. für die Musikvereine Eichstetten, Gottenheim und Maleck
+        9 Feste 2026, gespielt u.&nbsp;a. für die Musikvereine Burkheim, Eichstetten, Gottenheim, Maleck und Oberrimsingen
       </p>
     </div>
     <figure class="hero__media">
@@ -645,7 +646,13 @@
       </a>
       <ul class="booking__alt" role="list">
         <li>
-          <a href="mailto:kontakt@blechntakt.de"
+          <a href="https://wa.me/491719900177?text=Hallo%20Klaus%2C%20wir%20h%C3%A4tten%20eine%20Booking-Anfrage.%20Datum%3A%20%20Ort%3A%20" rel="noopener" target="_blank"
+             aria-label="Klaus per WhatsApp schreiben (neuer Tab)">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="mailto:kontakt@blechntakt.de?subject=Booking-Anfrage&amp;body=Datum%3A%20%0AOrt%3A%20%0AAnlass%3A%20%0AG%C3%A4ste%20ca.%3A%20%0A"
              aria-label="E-Mail an kontakt@blechntakt.de schreiben">
             <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> kontakt@blechntakt.de
           </a>
@@ -664,12 +671,27 @@
           <br>Am Ende des Abends heißt es oft: Nächstes&nbsp;Jahr&nbsp;wieder!
         </p>
         <p class="booking__refs-title">Gespielt für</p>
-        <p class="booking__refs">
-          Musikvereine Eichstetten, Gottenheim, Maleck, Nimburg-Bottingen, Oberrimsingen,
-          Waltershofen und Wasenweiler&nbsp;· Stadtkapelle Burkheim&nbsp;· Sportverein
-          Wasenweiler&nbsp;· Weingüter Briem und Kiefer
-        </p>
+        <div class="booking__refs">
+          <div>
+            <p class="booking__refs-group">Musikvereine</p>
+            <ul role="list">
+              <li>Eichstetten</li><li>Gottenheim</li><li>Maleck</li><li>Nimburg-Bottingen</li>
+              <li>Oberrimsingen</li><li>Waltershofen</li><li>Wasenweiler</li>
+            </ul>
+          </div>
+          <div>
+            <p class="booking__refs-group">Außerdem</p>
+            <ul role="list">
+              <li>Stadtkapelle Burkheim</li><li>Sportverein Wasenweiler</li>
+              <li>Weingut Briem</li><li>Weingut Kiefer</li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <p class="booking__echo">
+        Klaus freut sich auf euren Anruf:
+        <a href="tel:+491719900177">0171/9900177</a>
+      </p>
     </div>
   </section>
 
@@ -697,7 +719,7 @@
     <nav class="site-footer__col" aria-label="Booking">
       <h3>Booking</h3>
       <a href="tel:+491719900177"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> 0171/9900177</a>
-      <a href="mailto:kontakt@blechntakt.de"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> kontakt@blechntakt.de</a>
+      <a href="mailto:kontakt@blechntakt.de?subject=Booking-Anfrage&amp;body=Datum%3A%20%0AOrt%3A%20%0AAnlass%3A%20%0AG%C3%A4ste%20ca.%3A%20%0A"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> kontakt@blechntakt.de</a>
     </nav>
   </div>
 </footer>

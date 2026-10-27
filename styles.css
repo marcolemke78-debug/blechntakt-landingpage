@@ -134,7 +134,7 @@ p { margin: 0; }
 ul { padding: 0; margin: 0; list-style: none; }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-text);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
@@ -361,7 +361,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-weight: 600;
   color: var(--color-text-muted);
   margin-top: var(--space-md);
-  max-width: 34ch;
+  max-width: 46ch;
+  text-wrap: pretty;
 }
 
 @media (min-width: 960px) {
@@ -753,7 +754,6 @@ ul { padding: 0; margin: 0; list-style: none; }
   border-radius: var(--radius-lg);
   padding: var(--space-md) var(--space-lg);
   position: relative;
-  transition: border-color var(--transition-base), transform var(--transition-base);
   text-decoration: none;
   color: inherit;
   height: 100%;
@@ -817,6 +817,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 @media (max-width: 479px) {
   .gigs__cta-btn { width: 100%; padding-inline: var(--space-sm); font-size: 17px; }
 }
+@media (max-width: 359px) {
+  .gigs__cta-btn { font-size: 15px; gap: 6px; }
+}
 
 .gigs__private {
   margin-top: var(--space-md);
@@ -829,6 +832,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 /* Past season: compact reference list instead of cards */
 .gigs__past { columns: 2; column-gap: var(--space-md); }
+@media (max-width: 359px) { .gigs__past { columns: 1; } }
 .gigs__past li {
   display: grid;
   grid-template-columns: 4em 1fr;
@@ -989,11 +993,40 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-transform: uppercase;
 }
 .booking__refs {
-  margin-top: var(--space-xs);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  max-width: 440px;
+  margin: var(--space-sm) auto 0;
+  text-align: left;
   font-size: var(--font-size-small);
   font-weight: 600;
-  line-height: var(--line-height-relaxed);
+  line-height: 1.35;
 }
+.booking__refs-group {
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 800;
+}
+.booking__refs li { padding: 3px 0; }
+
+/* Closing echo: the page ends on the call, not on the reference list */
+.booking__echo {
+  margin-top: var(--space-xl);
+  font-size: var(--font-size-lead);
+  font-weight: 600;
+}
+.booking__echo a {
+  position: relative;
+  color: var(--color-text);
+  font-weight: 900;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 4px;
+}
+.booking__echo a::after { content: ""; position: absolute; inset: -12px -4px; }
 
 .booking__contact {
   margin-bottom: var(--space-sm);
