@@ -747,16 +747,58 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 
 .gig-card {
+  /* Ticket: red stub with the date, perforation, main part with the details */
+  --stub: 88px;
+  --notch: 10px;
+  display: grid;
+  grid-template-columns: var(--stub) minmax(0, 1fr);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  position: relative;
+  height: 100%;
+}
+/* Punched notches at both ends of the perforation, in the section colour */
+.gig-card::before,
+.gig-card::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--stub) - var(--notch));
+  width: calc(2 * var(--notch));
+  height: calc(2 * var(--notch));
+  border-radius: 50%;
+  background: var(--color-bg-deep);
+}
+.gig-card::before { top: calc(-1 * var(--notch)); }
+.gig-card::after { bottom: calc(-1 * var(--notch)); }
+
+.gig-card__stub {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md) var(--space-lg);
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: var(--color-accent);
+  color: var(--color-text);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+}
+.gig-card__wd, .gig-card__mm { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; }
+.gig-card__dd { font-size: 44px; font-weight: 900; line-height: 1; letter-spacing: -1px; }
+@media (max-width: 479px) {
+  .gig-card { --stub: 72px; }
+  .gig-card__dd { font-size: 38px; }
+  .gig-card__main { padding-left: var(--space-md); }
+}
+@media (max-width: 359px) {
+  .gig-card__title { font-size: 19px; }
+}
+
+.gig-card__main {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md) var(--space-md) var(--space-md) var(--space-lg);
+  border-left: 2px dashed rgba(255, 255, 255, 0.18);
 }
 
 .gig-card__map-hint {
@@ -777,16 +819,25 @@ ul { padding: 0; margin: 0; list-style: none; }
   display: flex;
   gap: var(--space-md);
   align-items: baseline;
-  color: var(--color-accent-text);
   font-weight: 700;
   font-size: var(--font-size-small);
   letter-spacing: 0.5px;
   margin-bottom: var(--space-xs);
 }
-.gig-card__day { font-size: 16px; }
-.gig-card__time { color: var(--color-text-soft); font-weight: 600; }
+/* The stub shows the date; the full date stays for screen readers and the "gespielt" script */
+.gig-card__day {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.gig-card__time { color: var(--color-accent-text); font-weight: 700; }
 
 .gig-card__title {
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: break-word;
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 4px;
@@ -799,8 +850,9 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 
 /* Past gigs: muted text instead of opacity, so contrast stays readable */
-.gig-card--past .gig-card__date,
+.gig-card--past .gig-card__time,
 .gig-card--past .gig-card__title { color: var(--color-text-soft); }
+.gig-card--past .gig-card__stub { background: var(--color-border); color: var(--color-text-soft); }
 .gig-card__map-hint:hover { color: var(--color-accent-text); }
 .gig-card--past .gig-card__map-hint { display: none; }
 .gig-card__past-label {
@@ -883,44 +935,68 @@ ul { padding: 0; margin: 0; list-style: none; }
 .repertoire__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
 
+/* Setlist: a sheet of paper taped to the stage floor, slightly askew */
 .rep-cat {
-  padding: var(--space-md) var(--space-lg);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg) var(--space-sm);
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  transform: rotate(-1deg);
 }
+.rep-cat:nth-child(2) { transform: rotate(0.8deg); }
+.rep-cat:nth-child(3) { transform: rotate(-0.5deg); }
 
 .rep-cat__title {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  font-size: 20px;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border);
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-bg);
+  margin-bottom: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  border-bottom: 3px solid var(--color-bg);
 }
+.rep-cat .rep-cat__title .icon { color: var(--color-accent); }
 
+.rep-cat__list { counter-reset: song; }
 .rep-cat__list li {
-  padding: 10px 0;
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border-subtle);
-  font-size: 15px;
+  counter-increment: song;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(22, 22, 24, 0.12);
+  font-size: 17px;
+  font-weight: 700;
+}
+.rep-cat__list li::before {
+  content: counter(song, decimal-leading-zero);
+  flex-shrink: 0;
+  min-width: 1.6em;
+  color: var(--color-accent);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
 }
 .rep-cat__list li:last-child { border-bottom: none; }
 .rep-cat__video {
   display: inline-flex; align-items: center; gap: 6px;
   min-height: 44px; margin-block: -11px;
-  color: var(--color-text);
-  text-decoration: underline; text-decoration-color: var(--color-accent-text);
+  color: var(--color-bg);
+  text-decoration: underline; text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-.rep-cat__video .icon { color: var(--color-accent-text); width: 0.85em; height: 0.85em; }
-.rep-cat__video:hover { color: var(--color-accent-text); }
+.rep-cat__video .icon { color: var(--color-accent); width: 0.85em; height: 0.85em; }
+.rep-cat__video:hover { color: var(--color-accent); }
+.rep-cat :focus-visible { outline-color: var(--color-accent); }
 
 .repertoire__cta {
   color: var(--color-text-muted);

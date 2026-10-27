@@ -215,7 +215,7 @@ blechNtakt_Landingpage/
 
 ### Cards
 
-**`.card`** — Basis für `gig-card`, `rep-cat`, `reel-card`:
+**`.card`** — Basis-Karte (Achtung: `gig-card` ist ein Ticket, `rep-cat` eine weiße Setlist mit nummerierten Songs `<ol>`):
 ```css
 .card {
   background: var(--color-bg-card);
@@ -301,7 +301,7 @@ html { scroll-behavior: smooth; }
 
 ## Termine pflegen
 
-- **Kommende öffentliche Termine:** als `<div class="gig-card">` mit Link nur auf „Auf Karte zeigen →“ (Titel = `h3`, Datum mit Jahr `TT.MM.JJJJ`, das JS markiert Vergangenes als „gespielt“) und zusätzlich als `Event` im Schema.org-JSON-LD
+- **Kommende öffentliche Termine:** als Ticket-`<div class="gig-card">` (vorhandene Karte kopieren): Abriss `.gig-card__stub` mit Wochentag (Fr), Tag (25), Monat (Jun); in `.gig-card__main` die volle `.gig-card__day` `TT.MM.JJJJ` (unsichtbar, das JS markiert danach Vergangenes als „gespielt“), `.gig-card__time` „19:00 Uhr“, Titel als `h3`, Link nur auf „Auf Karte zeigen →“. Zusätzlich als `Event` im Schema.org-JSON-LD
 - **Private Termine** (Hochzeit, Geburtstag …): nur in der Zeile `.gigs__private` (Herz-Icon + „Dazu N private Feiern: …“), nie als Karte, nie im JSON-LD
 - **Abgeschlossene Saison:** in die kompakte Liste `.gigs__past` verschieben, Events aus dem JSON-LD entfernen
 - **Bei jeder CSS-Änderung** `styles.css?v=JJJJ-MM-TT` in allen 3 HTML-Dateien hochzählen (Safari/GitHub-Pages-Cache)
