@@ -289,8 +289,16 @@ ul { padding: 0; margin: 0; list-style: none; }
   padding: var(--space-xl) var(--space-md) var(--space-2xl);
   max-width: var(--container-max);
   margin: 0 auto;
-  min-height: calc(100vh - 80px);
-  min-height: calc(100svh - 80px);
+}
+@media (min-width: 720px) {
+  .hero {
+    min-height: calc(100vh - 80px);
+    min-height: calc(100svh - 80px);
+  }
+}
+/* Phones: photo right under the header so the call button stays above the fold */
+@media (max-width: 719px) {
+  .hero { padding-top: var(--space-md); gap: var(--space-lg); }
 }
 
 .hero__content {
@@ -345,6 +353,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .hero__secondary-link, .booking__alt a, .repertoire__cta a, .hero__microtrust a { position: relative; }
 .hero__secondary-link::after, .booking__alt a::after, .repertoire__cta a::after,
 .hero__microtrust a::after { content: ""; position: absolute; inset: -12px -4px; }
+.hero__microtrust a::after { inset: -14px -4px; }
 .hero__secondary-link:hover { color: var(--color-text); border-bottom-color: var(--color-accent-text); }
 
 .hero__microtrust {
@@ -384,16 +393,12 @@ ul { padding: 0; margin: 0; list-style: none; }
   gap: var(--space-lg);
 }
 
-.about__container > .section-title { text-align: center; }
 
 .about__lead {
   font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-muted);
   max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 .about__body {
@@ -425,7 +430,6 @@ ul { padding: 0; margin: 0; list-style: none; }
   color: var(--color-text-muted);
   padding: var(--space-md) 0;
   border-top: 1px solid var(--color-border);
-  text-align: center;
 }
 .about__events strong { color: var(--color-text); }
 
@@ -453,7 +457,6 @@ ul { padding: 0; margin: 0; list-style: none; }
 .videos__container {
   max-width: var(--container-max);
   margin: 0 auto;
-  text-align: center;
 }
 
 .videos__subtitle {
@@ -616,7 +619,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   transition: border-color var(--transition-base), transform var(--transition-base), background var(--transition-base);
-  text-align: left;
+  max-width: 900px;
+  margin-inline: auto;
 }
 .videos__cta:hover {
   border-color: var(--color-accent-text);
@@ -642,11 +646,6 @@ ul { padding: 0; margin: 0; list-style: none; }
   flex-direction: column;
   gap: 4px;
   min-width: 0;
-  text-align: center;
-}
-
-@media (min-width: 720px) {
-  .videos__cta-text { text-align: left; }
 }
 .videos__cta-text strong { font-size: 20px; font-weight: 700; }
 .videos__cta-handle { color: var(--color-text-soft); font-size: var(--font-size-small); }
@@ -660,7 +659,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 
 @media (min-width: 720px) {
-  .videos__cta-qr { display: block; width: 96px; height: 96px; }
+  .videos__cta-qr { display: block; width: 96px; height: 96px; margin-left: auto; }
 }
 
 .videos__hint {
@@ -851,7 +850,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .gigs__private + .gigs__month { margin-top: var(--space-xl); }
 
 /* Past season: compact reference list instead of cards */
-.gigs__past { columns: 1; column-gap: var(--space-xl); }
+.gigs__past { columns: 2; column-gap: var(--space-md); }
 .gigs__past li {
   display: grid;
   grid-template-columns: 4em 1fr;
@@ -863,8 +862,14 @@ ul { padding: 0; margin: 0; list-style: none; }
 .gigs__past-date { color: var(--color-text-soft); font-weight: 700; font-variant-numeric: tabular-nums; }
 .gigs__past-name { font-weight: 700; }
 .gigs__past-place { grid-column: 2; color: var(--color-text-soft); font-size: var(--font-size-small); }
+/* Phones: date on its own small line so names fit in two columns */
+@media (max-width: 719px) {
+  .gigs__past li { grid-template-columns: 1fr; padding: 8px 0; }
+  .gigs__past-date { font-size: var(--font-size-small); }
+  .gigs__past-place { grid-column: 1; }
+}
 @media (min-width: 720px) {
-  .gigs__past { columns: 2; }
+  .gigs__past { column-gap: var(--space-xl); }
 }
 
 @media (min-width: 720px) {
@@ -927,7 +932,6 @@ ul { padding: 0; margin: 0; list-style: none; }
 .rep-cat__list li:last-child { border-bottom: none; }
 
 .repertoire__cta {
-  text-align: center;
   color: var(--color-text-muted);
   font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
@@ -1142,6 +1146,6 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 @media (max-width: 719px) {
   .sticky-call { display: flex; }
-  /* Spacer so sticky-call den Footer nicht überdeckt */
-  body { padding-bottom: 60px; }
+  /* Space so the sticky bar never covers the footer, in the footer's own color */
+  .site-footer { padding-bottom: calc(var(--space-xl) + 60px); }
 }

@@ -159,7 +159,7 @@
   <link rel="preload" as="image" type="image/webp"
         imagesrcset="assets/photos/hero-promo-mobile.webp 720w, assets/photos/hero-promo.webp 1100w"
         imagesizes="(max-width: 720px) 100vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=2026-10-27g">
+  <link rel="stylesheet" href="styles.css?v=2026-10-27h">
 
   <!-- Always open the page at the top, ignore browser scroll restoration -->
   <script>history.scrollRestoration = 'manual';</script>
@@ -639,7 +639,7 @@
       <p class="booking__contact">Am Telefon: <strong>Klaus</strong>, Trompete&nbsp;&amp;&nbsp;Flügelhorn</p>
       <a href="tel:+491719900177" class="booking__cta-tel"
          aria-label="Klaus anrufen unter 0171 9900177">
-        <span aria-hidden="true">📞</span> 0171 / 9900177
+        <span aria-hidden="true">📞</span> 0171/9900177
       </a>
       <ul class="booking__alt" role="list">
         <li>
@@ -680,7 +680,7 @@
 
     <nav class="site-footer__col" aria-label="Booking">
       <h3>Booking</h3>
-      <a href="tel:+491719900177">📞 0171 / 9900177</a>
+      <a href="tel:+491719900177">📞 0171/9900177</a>
       <a href="mailto:kontakt@blechntakt.de">✉️ kontakt@blechntakt.de</a>
     </nav>
   </div>
@@ -710,10 +710,10 @@
   })();
 </script>
 <script>
-  // Hide the sticky call bar while the hero CTA or the booking block is visible
+  // Hide the sticky call bar while the hero CTA or the big booking phone button is visible
   (function () {
     var bar = document.querySelector('.sticky-call');
-    var targets = [document.querySelector('.hero__cta-group'), document.getElementById('booking')];
+    var targets = [document.querySelector('.hero__cta-group'), document.querySelector('.booking__cta-tel')];
     if (!bar || !('IntersectionObserver' in window)) return;
     var visible = new Set();
     var observer = new IntersectionObserver(function (entries) {
