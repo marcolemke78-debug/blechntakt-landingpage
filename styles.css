@@ -157,6 +157,16 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .red-n { color: var(--color-accent); }  /* logo letter, keeps exact brand red */
 
+/* Outline icons from the inline sprite in index.html; colour follows the text */
+.icon {
+  width: 1em; height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.rep-cat__title .icon, .gig-card__venue .icon, .gigs__private-label .icon { color: var(--color-accent-text); }
+
 .section-title {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-tight);
@@ -421,7 +431,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
 }
-.about__icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.about__icon { width: 28px; height: 28px; color: var(--color-accent-text); }
 .about__points strong { display: block; margin-bottom: 4px; color: var(--color-text); }
 .about__points li > div { color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
 
