@@ -5,87 +5,23 @@
 
 /* ============================================================
    Inter — self-hosted (DSGVO-konform, kein Google CDN)
-   Subsets: latin + latin-ext, Weights: 400/600/700/800/900
+   Variable Font: eine Datei je Subset deckt alle Stärken 400–900 ab
    ============================================================ */
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 900;
   font-display: swap;
-  src: url('assets/fonts/inter-400-latin-ext.woff2') format('woff2');
+  src: url('assets/fonts/inter-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 900;
   font-display: swap;
-  src: url('assets/fonts/inter-400-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('assets/fonts/inter-600-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('assets/fonts/inter-600-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('assets/fonts/inter-700-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('assets/fonts/inter-700-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('assets/fonts/inter-800-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('assets/fonts/inter-800-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('assets/fonts/inter-900-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('assets/fonts/inter-900-latin.woff2') format('woff2');
+  src: url('assets/fonts/inter-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -406,8 +342,9 @@ ul { padding: 0; margin: 0; list-style: none; }
   transition: color var(--transition-base);
 }
 /* Invisible extension: 44px tap target without changing the look */
-.hero__secondary-link, .booking__alt a { position: relative; }
-.hero__secondary-link::after, .booking__alt a::after { content: ""; position: absolute; inset: -12px -4px; }
+.hero__secondary-link, .booking__alt a, .repertoire__cta a, .hero__microtrust a { position: relative; }
+.hero__secondary-link::after, .booking__alt a::after, .repertoire__cta a::after,
+.hero__microtrust a::after { content: ""; position: absolute; inset: -12px -4px; }
 .hero__secondary-link:hover { color: var(--color-text); border-bottom-color: var(--color-accent-text); }
 
 .hero__microtrust {
@@ -904,7 +841,14 @@ ul { padding: 0; margin: 0; list-style: none; }
   .gigs__cta-btn { width: 100%; padding-inline: var(--space-sm); font-size: 17px; }
 }
 
-.gigs__list + .gigs__month { margin-top: var(--space-xl); }
+.gigs__private {
+  margin-top: var(--space-md);
+  color: var(--color-text-soft);
+  font-size: 15px;
+  line-height: var(--line-height-relaxed);
+}
+.gigs__private-label { font-weight: 700; color: var(--color-text-muted); }
+.gigs__private + .gigs__month { margin-top: var(--space-xl); }
 
 /* Past season: compact reference list instead of cards */
 .gigs__past { columns: 1; column-gap: var(--space-xl); }
@@ -1054,18 +998,10 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-transform: uppercase;
 }
 .booking__refs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-xs);
   margin-top: var(--space-xs);
   font-size: var(--font-size-small);
   font-weight: 600;
-}
-.booking__refs li {
-  padding: 4px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 999px;
+  line-height: var(--line-height-relaxed);
 }
 
 .booking__cta-tel {
@@ -1162,6 +1098,11 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 .site-footer__col a:hover { color: var(--color-accent-text); }
 
+/* Phones: two columns, brand and booking full width */
+@media (max-width: 719px) {
+  .site-footer__container { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+  .site-footer__brand, .site-footer__col:last-child { grid-column: 1 / -1; }
+}
 @media (min-width: 720px) {
   .site-footer__container { grid-template-columns: 2fr 1fr 1fr auto; gap: var(--space-xl); }
 }
@@ -1189,6 +1130,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 .sticky-call:hover { background: var(--color-accent-hover); }
+.sticky-call { transition: transform var(--transition-base); }
+.sticky-call--hidden { transform: translateY(110%); }
 
 @media (max-width: 719px) {
   .sticky-call { display: flex; }
