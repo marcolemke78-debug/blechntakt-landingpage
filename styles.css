@@ -1004,6 +1004,13 @@ ul { padding: 0; margin: 0; list-style: none; }
   line-height: var(--line-height-relaxed);
 }
 
+.booking__contact {
+  margin-top: calc(-1 * var(--space-md));
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lead);
+}
+.booking__contact strong { font-weight: 800; }
+
 .booking__cta-tel {
   display: inline-flex;
   align-items: center;
