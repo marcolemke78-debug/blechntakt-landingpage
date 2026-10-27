@@ -1039,6 +1039,28 @@ ul { padding: 0; margin: 0; list-style: none; }
   line-height: var(--line-height-relaxed);
 }
 
+.booking__refs-title {
+  margin-top: var(--space-md);
+  font-size: var(--font-size-micro);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.booking__refs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+.booking__refs li {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+}
+
 .booking__cta-tel {
   display: inline-flex;
   align-items: center;
