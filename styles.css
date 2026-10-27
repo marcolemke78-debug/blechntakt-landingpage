@@ -235,7 +235,8 @@ ul { padding: 0; margin: 0; list-style: none; }
   border-bottom: 1px solid var(--color-border);
 }
 
-.site-header__logo { text-decoration: none; }
+.site-header__logo { text-decoration: none; position: relative; }
+.site-header__logo::after { content: ""; position: absolute; inset: -6px 0; }  /* 44px tap target */
 
 .site-header__nav {
   display: flex;
@@ -987,14 +988,15 @@ ul { padding: 0; margin: 0; list-style: none; }
 }
 .rep-cat__list li:last-child { border-bottom: none; }
 .rep-cat__video {
-  display: inline-flex; align-items: center; gap: 6px;
-  min-height: 44px; margin-block: -11px;
+  position: relative;
   color: var(--color-bg);
   text-decoration: underline; text-decoration-color: var(--color-accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-.rep-cat__video .icon { color: var(--color-accent); width: 0.85em; height: 0.85em; }
+.rep-cat__video::after { content: ""; position: absolute; inset: -12px -4px; }  /* 44px tap target */
+.rep-cat__video span { white-space: nowrap; }  /* play icon never wraps alone */
+.rep-cat__video .icon { color: var(--color-accent); width: 0.85em; height: 0.85em; margin-left: 4px; vertical-align: -0.05em; }
 .rep-cat__video:hover { color: var(--color-accent); }
 .rep-cat :focus-visible { outline-color: var(--color-accent); }
 
@@ -1011,7 +1013,21 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-weight: 700;
 }
 
-@media (min-width: 720px) { .repertoire__grid { grid-template-columns: repeat(3, 1fr); } }
+.repertoire { overflow-x: clip; }  /* tilted sheets must never cause sideways scroll */
+.rep-cat { width: 100%; max-width: 560px; }
+@media (max-width: 479px) {
+  .rep-cat { transform: rotate(-0.6deg); }
+  .rep-cat:nth-child(2) { transform: rotate(0.5deg); }
+  .rep-cat:nth-child(3) { transform: rotate(-0.4deg); }
+}
+@media (min-width: 960px) {
+  .repertoire__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rep-cat { max-width: none; }
+}
+@media (min-width: 960px) and (max-width: 1199px) {
+  .rep-cat { padding-inline: var(--space-md); }
+  .rep-cat__list li { font-size: 16px; gap: 12px; }
+}
 
 /* ============================================================
    Booking
