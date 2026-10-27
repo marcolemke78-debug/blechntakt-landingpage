@@ -159,7 +159,7 @@
   <link rel="preload" as="image" type="image/webp"
         imagesrcset="assets/photos/hero-promo-mobile.webp 720w, assets/photos/hero-promo.webp 1100w"
         imagesizes="(max-width: 720px) 100vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=2026-10-27j">
+  <link rel="stylesheet" href="styles.css?v=2026-10-27k">
 
   <!-- Always open the page at the top, ignore browser scroll restoration -->
   <script>history.scrollRestoration = 'manual';</script>
@@ -172,7 +172,7 @@
   <symbol id="i-insta" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
-  <symbol id="i-trumpet" viewBox="0 0 24 24"><path d="M2 9.5v3M2 11h12"/><path d="M14 9c3.5 0 6-1.5 8-4v12c-2-2.5-4.5-4-8-4Z"/><path d="M6 11V6M9 11V6M12 11V6M5 6h2M8 6h2M11 6h2"/><path d="M5 11c0 4.5 1 6 4 6h3c1.5 0 2-1 2-2.5V13"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
   <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
   <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
@@ -217,9 +217,7 @@
         <a href="#termine" class="hero__secondary-link">Termine ansehen ↓</a>
       </div>
       <p class="hero__microtrust">
-        Folge uns auf Instagram
-        <a href="https://instagram.com/blech_n_takt" rel="noopener" target="_blank">@blech_<span class="red-n">n</span>_takt</a>
-        · Booking direkt am Telefon
+        9 Feste in 2026, gespielt u.&nbsp;a. für die Musikvereine Eichstetten, Gottenheim und Maleck
       </p>
     </div>
     <figure class="hero__media">
@@ -260,7 +258,7 @@
             </div>
           </li>
           <li>
-            <svg class="icon about__icon" aria-hidden="true"><use href="#i-music"/></svg>
+            <svg class="icon about__icon" aria-hidden="true"><use href="#i-clock"/></svg>
             <div>
               <strong>Wir spielen mit dem Moment.</strong>
               Vom getragenen Walzer beim Aperitif bis zur vollen Tanzfläche um Mitternacht.
@@ -296,7 +294,7 @@
     <div class="videos__container">
       <h2 id="videos-title" class="section-title">Wie klingt das live?</h2>
       <p class="videos__subtitle">
-        Fünf Live-Eindrücke. Klick öffnet das Video auf YouTube (neuer Tab).
+        Fünf Live-Eindrücke von unseren Festen, alle auf YouTube.
       </p>
 
       <div class="videos__grid videos__grid--landscape">
@@ -512,46 +510,43 @@
 
       <ul class="gigs__list" role="list">
         <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.1011128,7.6001133"
-             rel="noopener" target="_blank"
-             aria-label="Burkheim Open-Air am 25.06.2027, 19:00 Uhr, Standort auf Karte öffnen">
+          <div class="gig-card">
             <div class="gig-card__date">
               <span class="gig-card__day">25.06.2027</span>
               <span class="gig-card__time">19:00</span>
             </div>
             <h3 class="gig-card__title">Burkheim Open-Air</h3>
             <p class="gig-card__venue"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Brünnele-Garten · Burkheim · mit der Stadtkapelle Burkheim</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-          </a>
+            <a class="gig-card__map-hint" href="https://www.google.com/maps/search/?api=1&query=48.1011128,7.6001133"
+               rel="noopener" target="_blank"
+               aria-label="Burkheim Open-Air: Standort auf Karte öffnen (neuer Tab)">Auf Karte zeigen →</a>
+          </div>
         </li>
         <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.0942893,7.7453734"
-             rel="noopener" target="_blank"
-             aria-label="Schwibbogenfest Eichstetten am 03.09.2027, 18:00 Uhr, Standort auf Karte öffnen">
+          <div class="gig-card">
             <div class="gig-card__date">
               <span class="gig-card__day">03.09.2027</span>
               <span class="gig-card__time">18:00</span>
             </div>
             <h3 class="gig-card__title">Schwibbogenfest</h3>
             <p class="gig-card__venue"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Eichstetten · beim Musikverein Eichstetten</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-          </a>
+            <a class="gig-card__map-hint" href="https://www.google.com/maps/search/?api=1&query=48.0942893,7.7453734"
+               rel="noopener" target="_blank"
+               aria-label="Schwibbogenfest: Standort auf Karte öffnen (neuer Tab)">Auf Karte zeigen →</a>
+          </div>
         </li>
         <li>
-          <a class="gig-card gig-card--link"
-             href="https://www.google.com/maps/search/?api=1&query=48.1013433,7.5982901"
-             rel="noopener" target="_blank"
-             aria-label="Zwiebelkuchenfest Burkheim am 05.09.2027, 18:00 Uhr, Standort auf Karte öffnen">
+          <div class="gig-card">
             <div class="gig-card__date">
               <span class="gig-card__day">05.09.2027</span>
               <span class="gig-card__time">18:00</span>
             </div>
             <h3 class="gig-card__title">Zwiebelkuchenfest</h3>
             <p class="gig-card__venue"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Burkheim · bei der Stadtkapelle Burkheim</p>
-            <span class="gig-card__map-hint">Auf Karte zeigen →</span>
-          </a>
+            <a class="gig-card__map-hint" href="https://www.google.com/maps/search/?api=1&query=48.1013433,7.5982901"
+               rel="noopener" target="_blank"
+               aria-label="Zwiebelkuchenfest: Standort auf Karte öffnen (neuer Tab)">Auf Karte zeigen →</a>
+          </div>
         </li>
       </ul>
       <p class="gigs__private">
@@ -583,7 +578,7 @@
       <div class="repertoire__grid">
         <div class="rep-cat">
           <h3 class="rep-cat__title">
-            <svg class="icon" aria-hidden="true"><use href="#i-trumpet"/></svg> Tradition
+            <svg class="icon" aria-hidden="true"><use href="#i-music"/></svg> Tradition
           </h3>
           <ul class="rep-cat__list" role="list">
             <li>Böhmischer Traum</li>
@@ -643,20 +638,6 @@
         klären Datum und Setup und sagen euch ehrlich, ob wir passen. Wenn
         nicht, empfehlen wir euch gern eine andere Band.
       </p>
-      <div class="booking__proof">
-        <p class="booking__proof-words">Authentisch. Unkompliziert. Professionell.</p>
-        <p class="booking__proof-text">
-          Wir stellen das Programm auf euer Fest ein, bringen unsere Technik mit
-          und kümmern uns um den Rest. Ihr habt den Kopf frei für eure Gäste.
-          <br>Am Ende des Abends heißt es oft: Nächstes&nbsp;Jahr&nbsp;wieder!
-        </p>
-        <p class="booking__refs-title">Gespielt für</p>
-        <p class="booking__refs">
-          Musikvereine Eichstetten, Gottenheim, Maleck, Nimburg-Bottingen, Oberrimsingen,
-          Waltershofen und Wasenweiler&nbsp;· Stadtkapelle Burkheim&nbsp;· Sportverein
-          Wasenweiler&nbsp;· Weingüter Briem und Kiefer
-        </p>
-      </div>
       <p class="booking__contact">Am Telefon: <strong>Klaus</strong>, Trompete&nbsp;&amp;&nbsp;Flügelhorn</p>
       <a href="tel:+491719900177" class="booking__cta-tel"
          aria-label="Klaus anrufen unter 0171 9900177">
@@ -675,6 +656,20 @@
           </a>
         </li>
       </ul>
+      <div class="booking__proof">
+        <p class="booking__proof-words">Authentisch. Unkompliziert. Professionell.</p>
+        <p class="booking__proof-text">
+          Wir stellen das Programm auf euer Fest ein, bringen unsere Technik mit
+          und kümmern uns um den Rest. Ihr habt den Kopf frei für eure Gäste.
+          <br>Am Ende des Abends heißt es oft: Nächstes&nbsp;Jahr&nbsp;wieder!
+        </p>
+        <p class="booking__refs-title">Gespielt für</p>
+        <p class="booking__refs">
+          Musikvereine Eichstetten, Gottenheim, Maleck, Nimburg-Bottingen, Oberrimsingen,
+          Waltershofen und Wasenweiler&nbsp;· Stadtkapelle Burkheim&nbsp;· Sportverein
+          Wasenweiler&nbsp;· Weingüter Briem und Kiefer
+        </p>
+      </div>
     </div>
   </section>
 

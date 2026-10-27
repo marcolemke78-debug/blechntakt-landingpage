@@ -30,6 +30,7 @@ Tech-Affinität gemischt — Page muss auf Boomer-Smartphone genauso funktionier
 - **Keine Frameworks:** kein Tailwind, kein Bootstrap, kein React/Vue
 - **JavaScript:** nur wenn strikt nötig (z. B. Mobile-Menü, Video-Lazy-Load), Vanilla JS
 - **Fonts:** Inter self-hosted als Variable Font (`assets/fonts/inter-latin.woff2` + `-latin-ext`, alle Weights 400–900 in einer Datei), kein Google CDN (DSGVO)
+- **Icons:** Inline-Sprite am `<body>`-Anfang (`<symbol id="i-…">`, Lucide-Stil), Einsatz `<svg class="icon"><use href="#i-phone"/></svg>`. Keine Emojis.
 - **Assets:** SVG für Icons; JPG/WebP für Fotos (komprimiert); Videos extern eingebettet (Insta/YouTube), nicht selbst gehostet
 
 ## Design-Prinzipien
@@ -63,12 +64,13 @@ Tech-Affinität gemischt — Page muss auf Boomer-Smartphone genauso funktionier
 
   --color-accent: #B22325;         /* Brand-Rot (Akzent, CTA, das N) */
   --color-accent-hover: #9a1d1f;   /* CTA-Hover (10% dunkler) */
+  --color-accent-text: #E85254;    /* Rot für TEXT auf Dunkel (≥ 4,6:1); #B22325 nur für Flächen + das N */
   --color-accent-on-light: #B22325;
 
   --color-text: #FFFFFF;
   --color-text-muted: rgba(255, 255, 255, 0.85);
-  --color-text-soft: rgba(255, 255, 255, 0.6);
-  --color-text-faint: rgba(255, 255, 255, 0.4);  /* Footer-Stil */
+  --color-text-soft: rgba(255, 255, 255, 0.7);
+  --color-text-faint: rgba(255, 255, 255, 0.6);  /* Footer-Stil */
 
   --color-success: #22C55E;        /* Bestätigt-Badge, Häkchen */
   --color-warn: #FFC107;           /* Unbestätigt-Badge */
@@ -174,7 +176,7 @@ blechNtakt_Landingpage/
   color: var(--color-text);
   margin-bottom: var(--space-md);
 }
-.section-title .accent { color: var(--color-accent); }
+.section-title .accent { color: var(--color-accent-text); }
 ```
 
 **`.section-padding`** (Wrapper-Klasse für Section-Pads):
@@ -221,13 +223,6 @@ blechNtakt_Landingpage/
   border-radius: var(--radius-lg);
   padding: var(--space-md);
 }
-```
-
-**`.badge`** — Status-Indikatoren (bestätigt / unbestätigt):
-```css
-.badge { padding: 4px 10px; border-radius: var(--radius-sm); font-size: var(--font-size-micro); display: inline-block; }
-.badge--confirmed { background: rgba(34,197,94,.15); color: var(--color-success); }
-.badge--tentative { background: rgba(255,193,7,.15); color: var(--color-warn); }
 ```
 
 ### Mobile-Sticky-Call-Bar
@@ -281,6 +276,7 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
 }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+/* auf Rot (Booking, .btn--primary, .sticky-call) weißer Ring */
 ```
 
 ## Accessibility
@@ -305,8 +301,8 @@ html { scroll-behavior: smooth; }
 
 ## Termine pflegen
 
-- **Kommende öffentliche Termine:** als `.gig-card` (Titel = `h3`, Datum mit Jahr `TT.MM.JJJJ`, das JS markiert Vergangenes als „gespielt“) und zusätzlich als `Event` im Schema.org-JSON-LD
-- **Private Termine** (Hochzeit, Geburtstag …): nur in der Zeile `.gigs__private` („🤍 Dazu N private Feiern: …“), nie als Karte, nie im JSON-LD
+- **Kommende öffentliche Termine:** als `<div class="gig-card">` mit Link nur auf „Auf Karte zeigen →“ (Titel = `h3`, Datum mit Jahr `TT.MM.JJJJ`, das JS markiert Vergangenes als „gespielt“) und zusätzlich als `Event` im Schema.org-JSON-LD
+- **Private Termine** (Hochzeit, Geburtstag …): nur in der Zeile `.gigs__private` (Herz-Icon + „Dazu N private Feiern: …“), nie als Karte, nie im JSON-LD
 - **Abgeschlossene Saison:** in die kompakte Liste `.gigs__past` verschieben, Events aus dem JSON-LD entfernen
 - **Bei jeder CSS-Änderung** `styles.css?v=JJJJ-MM-TT` in allen 3 HTML-Dateien hochzählen (Safari/GitHub-Pages-Cache)
 
